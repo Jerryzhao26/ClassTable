@@ -1,0 +1,6 @@
+{
+  "name": "ClassTable",
+  "description": "Class schedule and timetable management application",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
