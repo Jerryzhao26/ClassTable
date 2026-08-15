@@ -1,0 +1,6 @@
+{
+  "name": "ClassTable",
+  "description": "Beavers 班级排课与课程进度表管理系统，支持批量删除已排课程、智能自动排课、一键顺延及家校通知导出",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
