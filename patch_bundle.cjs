@@ -28,9 +28,9 @@ if (hbStart === -1 || tbStart === -1 || cbStart === -1 || ebStart === -1 || abSt
 const beforeHb = bundle.substring(0, hbStart);
 let afterEb = bundle.substring(abStart); // starts with ,Ab=...
 
-// 1. Inject exportLocalBackup definition right after const d=()=>({version:"1.0.0",...});
+// 1. Inject exportLocalBackup and restoreLocalBackup definition right after const d=()=>({version:"1.0.0",...});
 const oldDDef = 'const d=()=>({version:"1.0.0",updatedAt:new Date().toLocaleString(),templates:xe,schedules:me,levels:Me,holidays:ye,teachers:se,customTextbooks:A});';
-const newDDef = 'const d=()=>({version:"1.0.0",updatedAt:new Date().toLocaleString(),templates:xe,schedules:me,levels:Me,holidays:ye,teachers:se,customTextbooks:A});const exportLocalBackup=()=>{try{const L=d(),blob=new Blob([JSON.stringify(L,null,2)],{type:"application/json;charset=utf-8;"}),url=URL.createObjectURL(blob),a=document.createElement("a"),dateStr=new Date().toISOString().split("T")[0];a.setAttribute("href",url),a.setAttribute("download",`Beavers_排课系统全量备份_${dateStr}.json`),document.body.appendChild(a),a.click(),document.body.removeChild(a),URL.revokeObjectURL(url);return L}catch(e){console.error("Backup export error:",e);return null}};';
+const newDDef = 'const d=()=>({version:"1.0.0",updatedAt:new Date().toLocaleString(),templates:xe,schedules:me,levels:Me,holidays:ye,teachers:se,customTextbooks:A});const exportLocalBackup=()=>{try{const L=d(),blob=new Blob([JSON.stringify(L,null,2)],{type:"application/json;charset=utf-8;"}),url=URL.createObjectURL(blob),a=document.createElement("a"),dateStr=new Date().toISOString().split("T")[0];a.setAttribute("href",url),a.setAttribute("download",`Beavers_排课系统全量备份_${dateStr}.json`),document.body.appendChild(a),a.click(),document.body.removeChild(a),URL.revokeObjectURL(url);return L}catch(e){console.error("Backup export error:",e);return null}};const restoreLocalBackup=(data,cb)=>{if(!data||(!data.schedules&&!data.templates&&!data.levels))return!1;te(()=>{Ve(data),C(),cb&&cb(data)});return!0};';
 
 if (!afterEb.includes(oldDDef)) {
   console.error('oldDDef not found in afterEb');
@@ -38,9 +38,9 @@ if (!afterEb.includes(oldDDef)) {
 }
 afterEb = afterEb.replace(oldDDef, newDDef);
 
-// 2. Update _b call in App root to pass onExportBackup:exportLocalBackup
+// 2. Update _b call in App root to pass onExportBackup:exportLocalBackup, onRestoreBackup:restoreLocalBackup
 const oldBCall = 's.jsx(_b,{activeTab:r,setActiveTab:L=>{T(L),L!=="schedules"&&u(null)},totalClassesCount:Et,activeLessonsThisWeekCount:At,onOpenQuickWizard:()=>te(()=>he()),isEditAuthorized:Q,onOpenAuthModal:()=>b(!0),onLockEdit:()=>H(!1),gistId:Z,onOpenGistModal:()=>ve(!0)})';
-const newBCall = 's.jsx(_b,{activeTab:r,setActiveTab:L=>{T(L),L!=="schedules"&&u(null)},totalClassesCount:Et,activeLessonsThisWeekCount:At,onOpenQuickWizard:()=>te(()=>he()),isEditAuthorized:Q,onOpenAuthModal:()=>b(!0),onLockEdit:()=>H(!1),gistId:Z,onOpenGistModal:()=>ve(!0),onExportBackup:exportLocalBackup})';
+const newBCall = 's.jsx(_b,{activeTab:r,setActiveTab:L=>{T(L),L!=="schedules"&&u(null)},totalClassesCount:Et,activeLessonsThisWeekCount:At,onOpenQuickWizard:()=>te(()=>he()),isEditAuthorized:Q,onOpenAuthModal:()=>b(!0),onLockEdit:()=>H(!1),gistId:Z,onOpenGistModal:()=>ve(!0),onExportBackup:exportLocalBackup,onRestoreBackup:restoreLocalBackup})';
 
 if (!afterEb.includes(oldBCall)) {
   console.error('oldBCall not found in afterEb');
@@ -48,9 +48,9 @@ if (!afterEb.includes(oldBCall)) {
 }
 afterEb = afterEb.replace(oldBCall, newBCall);
 
-// 3. Update Tb call in App root to pass onExportBackup:exportLocalBackup
+// 3. Update Tb call in App root to pass onExportBackup:exportLocalBackup, onRestoreBackup:restoreLocalBackup
 const oldTbCall = 's.jsx(Tb,{schedules:me,templates:xe,teachers:se,onSelectSchedule:L=>{u(L),T("schedules")},onOpenWizard:()=>te(()=>he()),onUpdateLessonStatus:Ne})';
-const newTbCall = 's.jsx(Tb,{schedules:me,templates:xe,teachers:se,onSelectSchedule:L=>{u(L),T("schedules")},onOpenWizard:()=>te(()=>he()),onUpdateLessonStatus:Ne,onExportBackup:exportLocalBackup})';
+const newTbCall = 's.jsx(Tb,{schedules:me,templates:xe,teachers:se,onSelectSchedule:L=>{u(L),T("schedules")},onOpenWizard:()=>te(()=>he()),onUpdateLessonStatus:Ne,onExportBackup:exportLocalBackup,onRestoreBackup:restoreLocalBackup})';
 
 if (!afterEb.includes(oldTbCall)) {
   console.error('oldTbCall not found in afterEb');
