@@ -185,9 +185,12 @@ Eb=({schedule:r,templates:T=[],holidays:j=[],onUpdateSchedule:u,onDeleteSchedule
                               s.jsx("span", { children: r.textbook || "Big Fun 1" })
                             ]
                           }),
-                          s.jsx("span", {
-                            className: "bg-indigo-50 text-indigo-700 border border-indigo-100 text-xs font-bold px-2 py-0.5 rounded-md",
-                            children: r.levelName
+                          s.jsxs("span", {
+                            className: "bg-slate-100 text-slate-700 border border-slate-200 text-xs font-bold px-2 py-0.5 rounded-md flex items-center space-x-1",
+                            children: [
+                              s.jsx(Io, { className: "w-3 h-3 text-slate-400" }),
+                              s.jsx("span", { children: r.teacher })
+                            ]
                           })
                         ]
                       }),

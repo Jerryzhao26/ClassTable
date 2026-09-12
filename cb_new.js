@@ -334,9 +334,12 @@ Cb=({schedules:r,levels:T,teachers:j,onSelectSchedule:u,onOpenQuickWizard:N,onDe
                           })
                         ]
                       }),
-                      s.jsx("span", {
-                        className: "bg-indigo-50 text-indigo-700 text-xs font-bold px-2.5 py-1 rounded-full border border-indigo-100 shrink-0",
-                        children: O.levelName
+                      s.jsxs("span", {
+                        className: "bg-slate-100 text-slate-700 text-xs font-bold px-2.5 py-1 rounded-full border border-slate-200 shrink-0 flex items-center space-x-1",
+                        children: [
+                          s.jsx(Io, { className: "w-3 h-3 text-slate-400" }),
+                          s.jsx("span", { children: O.teacher })
+                        ]
                       })
                     ]
                   }),

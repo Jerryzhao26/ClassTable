@@ -225,7 +225,7 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
           scheduleId: sched.id,
           className: sched.className,
           levelName: sched.levelName || "",
-          textbook: sched.textbook || "",
+          textbook: sched.textbook || (T && T.find(t => t.id === sched.templateId)?.textbook) || "未设教材",
           classFrequency: sched.frequency === "1x_week" ? "一周一次" : sched.frequency === "2x_week" ? "一周两次" : "多频/自定义",
           lessonId: les.id,
           lessonIndex: les.lessonIndex,
@@ -309,7 +309,7 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
   // Download Overview Excel CSV
   const handleDownloadOverviewExcel = () => {
     if (exportMatchingLessons.length === 0) {
-      showNotice("选定时间区间内没有排课记录，无法导出表格", "error");
+      showNotice("⚠️ 当前选定时间区间（" + exportStartDate + " 至 " + exportEndDate + "）或筛选条件下暂无课次，请调整起止日期或勾选包含状态后再导出！", "error");
       return;
     }
 
@@ -340,12 +340,11 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
       "星期",
       "上课时间段",
       "班级名称",
-      "课程级别",
+      "授课教师",
       "教材版本",
       "课次序号",
       "课程代码",
       "教学主题与内容安排",
-      "授课教师",
       "教室",
       "课次状态",
       "课后学情备注"
@@ -357,12 +356,11 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
       item.dayOfWeekStr,
       escapeCell(item.timeSlot),
       escapeCell(item.className),
-      escapeCell(item.levelName),
-      escapeCell(item.textbook),
+      escapeCell(item.teacher),
+      escapeCell(item.textbook || "未设教材"),
       `第${item.lessonIndex}次`,
       escapeCell(item.lessonCode),
       escapeCell(item.topic),
-      escapeCell(item.teacher),
       escapeCell(item.classroom),
       statusLabels[item.status] || item.status,
       escapeCell(item.note)
@@ -466,10 +464,10 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
                     className: "text-left leading-tight",
                     children: [
                       s.jsxs("span", { className: "block text-xs font-black tracking-wide text-white flex items-center space-x-1.5", children: [
-                        s.jsx("span", { children: "导出总览 Excel" }),
+                        s.jsx("span", { children: "下载排课总览 Excel" }),
                         s.jsx("span", { className: "bg-white/25 text-emerald-100 text-[10px] px-1.5 py-0.2 rounded font-mono font-bold", children: "XLSX" })
                       ]}),
-                      s.jsx("span", { className: "text-[10px] text-emerald-100/90 font-normal mt-0.5 block", children: "自定义区间 · 教师 · 状态" })
+                      s.jsx("span", { className: "text-[10px] text-emerald-100/90 font-normal mt-0.5 block", children: "自定义区间 · 导出/下载总览表格" })
                     ]
                   })
                 ]
@@ -643,10 +641,10 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
                 type: "button",
                 onClick: () => setIsExportExcelModalOpen(true),
                 className: "px-3 py-1.5 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-300 font-bold text-xs rounded-full transition-all shadow-2xs hover:shadow-xs flex items-center space-x-1.5 cursor-pointer shrink-0",
-                title: "快速打开导出总览 Excel 对话框",
+                title: "打开排课总览 Excel 表格下载与筛选对话框",
                 children: [
                   s.jsx(Nf, { className: "w-3.5 h-3.5 text-emerald-600" }),
-                  s.jsx("span", { children: "导出总览 Excel" })
+                  s.jsx("span", { children: "下载排课总览 Excel" })
                 ]
               })
             ]
@@ -674,11 +672,11 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
                 children: s.jsxs("tr", {
                   children: [
                     s.jsx("th", {
-                      className: "sticky left-0 z-30 bg-slate-100 p-3 min-w-[200px] w-[200px] border-r border-slate-200 font-bold text-xs text-slate-700 shadow-xs",
+                      className: "sticky left-0 z-30 bg-slate-100 p-3 min-w-[210px] w-[210px] border-r border-slate-200 font-bold text-xs text-slate-700 shadow-xs",
                       children: s.jsxs("div", {
                         className: "flex items-center justify-between",
                         children: [
-                          s.jsx("span", { children: "班级信息 (纵向)" }),
+                          s.jsx("span", { children: "班级 / 教师 / 教材" }),
                           s.jsxs("span", { className: "text-[10px] font-mono text-slate-400", children: [b + 1, "月 (共", ye.length, "天)"] })
                         ]
                       })
@@ -715,28 +713,42 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
                             s.jsxs("div", {
                               className: "flex items-center justify-between cursor-pointer group",
                               onClick: () => u(y),
+                              title: `点击查看 ${y.className} 班级排课明细`,
                               children: [
                                 s.jsx("span", {
-                                  className: "font-black text-xs text-slate-900 group-hover:text-indigo-600 group-hover:underline truncate max-w-[140px]",
-                                  title: y.className,
+                                  className: "font-black text-xs text-slate-900 group-hover:text-indigo-600 group-hover:underline truncate max-w-[155px]",
                                   children: y.className
                                 }),
                                 s.jsx(of, { className: "w-3 h-3 text-slate-300 group-hover:text-indigo-600 shrink-0" })
                               ]
                             }),
                             s.jsxs("div", {
-                              className: "flex items-center space-x-1.5 text-[10px]",
+                              className: "space-y-1 text-[11px]",
                               children: [
-                                s.jsx("span", { className: "bg-slate-100 text-slate-600 px-1.5 py-0.5 rounded font-medium", children: y.teacher }),
-                                s.jsx("span", { className: "bg-indigo-50 text-indigo-700 px-1.5 py-0.5 rounded font-mono font-bold", children: y.levelName })
+                                s.jsxs("div", {
+                                  className: "flex items-center space-x-1.5 text-slate-700 font-semibold truncate",
+                                  title: `教师: ${y.teacher}`,
+                                  children: [
+                                    s.jsx(Io, { className: "w-3 h-3 text-indigo-500 shrink-0" }),
+                                    s.jsxs("span", { className: "truncate", children: ["教师: ", y.teacher] })
+                                  ]
+                                }),
+                                s.jsxs("div", {
+                                  className: "flex items-center space-x-1.5 text-amber-900 bg-amber-50/90 border border-amber-200/80 px-1.5 py-0.5 rounded text-[10px] font-bold truncate max-w-[195px]",
+                                  title: `教材: ${y.textbook || (T && T.find(t => t.id === y.templateId)?.textbook) || "未设教材"}`,
+                                  children: [
+                                    s.jsx(Nt, { className: "w-3 h-3 text-amber-600 shrink-0" }),
+                                    s.jsxs("span", { className: "truncate", children: ["教材: ", y.textbook || (T && T.find(t => t.id === y.templateId)?.textbook) || "未设教材"] })
+                                  ]
+                                })
                               ]
                             }),
                             s.jsxs("div", {
-                              className: "flex items-center space-x-1 text-[10px] text-slate-400 font-mono",
+                              className: "flex items-center justify-between text-[10px] text-slate-400 font-mono pt-1 border-t border-slate-100",
                               children: [
                                 s.jsx("span", { children: "进度:" }),
                                 s.jsxs("span", { className: "font-bold text-slate-700", children: [K, "/", ce] }),
-                                s.jsxs("span", { children: ["(", Math.round(ce > 0 ? (K / ce) * 100 : 0), "%)"] })
+                                s.jsxs("span", { className: "text-indigo-600 font-bold", children: [Math.round(ce > 0 ? (K / ce) * 100 : 0), "%"] })
                               ]
                             })
                           ]
@@ -914,40 +926,58 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
 
       // Export Overview Excel with Custom Date Range Modal
       isExportExcelModalOpen && s.jsx("div", {
-        className: "fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-4 animate-fadeIn",
+        className: "fixed inset-0 z-50 bg-slate-900/60 backdrop-blur-xs flex items-center justify-center p-3 sm:p-4 animate-fadeIn",
         children: s.jsxs("div", {
-          className: "bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-slate-200 overflow-hidden max-h-[92vh] flex flex-col",
+          className: "bg-white rounded-2xl max-w-2xl w-full shadow-2xl border border-slate-200 overflow-hidden max-h-[90vh] flex flex-col",
           children: [
             // Modal Header
             s.jsxs("div", {
-              className: "p-5 border-b border-slate-200 bg-slate-50/80 flex items-center justify-between shrink-0",
+              className: "p-4 sm:p-5 border-b border-slate-200 bg-slate-50/90 flex items-center justify-between shrink-0 gap-3",
               children: [
                 s.jsxs("div", {
-                  className: "flex items-center space-x-3",
+                  className: "flex items-center space-x-3 min-w-0",
                   children: [
                     s.jsx("div", {
                       className: "w-10 h-10 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center shrink-0 border border-emerald-200",
                       children: s.jsx(Nf, { className: "w-5 h-5" })
                     }),
                     s.jsxs("div", {
+                      className: "min-w-0",
                       children: [
-                        s.jsx("h3", { className: "text-base font-black text-slate-900", children: "导出排课总览 (Excel 表格)" }),
-                        s.jsx("p", { className: "text-xs text-slate-500 mt-0.5", children: "自定义时间区间与多维度筛选，生成标准 Excel 课程进度总览并导出为本地表格" })
+                        s.jsx("h3", { className: "text-base font-black text-slate-900 truncate", children: "导出排课总览 (Excel 表格)" }),
+                        s.jsx("p", { className: "text-xs text-slate-500 mt-0.5 truncate hidden sm:block", children: "自定义时间区间与多维度筛选，生成标准 Excel 课程进度总览并导出为本地表格" })
                       ]
                     })
                   ]
                 }),
-                s.jsx("button", {
-                  onClick: () => setIsExportExcelModalOpen(false),
-                  className: "p-1 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-200 transition-colors",
-                  children: s.jsx(zl, { className: "w-5 h-5" })
+                s.jsxs("div", {
+                  className: "flex items-center space-x-2 shrink-0",
+                  children: [
+                    s.jsxs("button", {
+                      type: "button",
+                      onClick: handleDownloadOverviewExcel,
+                      className: "px-4 py-2 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 active:scale-95 text-white font-black rounded-xl shadow-md shadow-emerald-700/25 ring-2 ring-emerald-400/30 transition-all flex items-center space-x-1.5 text-xs cursor-pointer",
+                      title: "立即下载当前筛选的排课总览 Excel 表格",
+                      children: [
+                        s.jsx(Nf, { className: "w-4 h-4 text-emerald-100 stroke-[2.5]" }),
+                        s.jsxs("span", { children: ["立即下载 Excel (", exportStats.totalLessons, "节)"] })
+                      ]
+                    }),
+                    s.jsx("button", {
+                      type: "button",
+                      onClick: () => setIsExportExcelModalOpen(false),
+                      className: "p-1.5 rounded-full text-slate-400 hover:text-slate-600 hover:bg-slate-200 transition-colors cursor-pointer",
+                      title: "关闭对话框",
+                      children: s.jsx(zl, { className: "w-5 h-5" })
+                    })
+                  ]
                 })
               ]
             }),
 
             // Modal Body
             s.jsxs("div", {
-              className: "p-6 overflow-y-auto space-y-5 text-xs",
+              className: "p-5 overflow-y-auto space-y-4 text-xs flex-1 min-h-0",
               children: [
                 // Quick Date Range Presets
                 s.jsxs("div", {
@@ -1123,10 +1153,25 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
                     s.jsxs("div", {
                       className: "flex items-center justify-between border-b border-slate-200 pb-2",
                       children: [
-                        s.jsx("span", { className: "font-extrabold text-slate-900", children: "导出数据统计概览" }),
-                        s.jsxs("span", {
-                          className: "font-mono font-bold text-[11px] text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded",
-                          children: ["匹配总课次: ", exportStats.totalLessons, " 节"]
+                        s.jsxs("div", {
+                          className: "flex items-center space-x-2",
+                          children: [
+                            s.jsx("span", { className: "font-extrabold text-slate-900", children: "导出数据统计概览" }),
+                            s.jsxs("span", {
+                              className: "font-mono font-bold text-[11px] text-emerald-700 bg-emerald-100 px-2 py-0.5 rounded",
+                              children: ["匹配总课次: ", exportStats.totalLessons, " 节"]
+                            })
+                          ]
+                        }),
+                        s.jsxs("button", {
+                          type: "button",
+                          onClick: handleDownloadOverviewExcel,
+                          className: "px-3.5 py-1.5 bg-emerald-600 hover:bg-emerald-700 active:scale-95 text-white rounded-lg font-black text-xs flex items-center space-x-1.5 transition-all cursor-pointer shadow-xs",
+                          title: "立即下载当前筛选统计的排课总览数据",
+                          children: [
+                            s.jsx(Nf, { className: "w-3.5 h-3.5 stroke-[2.5]" }),
+                            s.jsx("span", { children: "立即下载此数据" })
+                          ]
                         })
                       ]
                     }),
@@ -1205,6 +1250,47 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
                     }) : s.jsx("div", {
                       className: "text-center py-2 text-rose-600 font-bold text-xs",
                       children: "⚠️ 所选时间区间或筛选条件内无课次，请调整起止日期或勾选更多状态。"
+                    }),
+
+                    // Prominent Download Callout Box right inside the card!
+                    s.jsxs("div", {
+                      className: "bg-emerald-50/90 border-2 border-emerald-500/30 rounded-xl p-3.5 flex flex-col sm:flex-row items-center justify-between gap-3 mt-3 shadow-xs",
+                      children: [
+                        s.jsxs("div", {
+                          className: "flex items-center space-x-3 text-left w-full sm:w-auto",
+                          children: [
+                            s.jsx("div", {
+                              className: "w-10 h-10 rounded-xl bg-emerald-600 text-white flex items-center justify-center shrink-0 shadow-md shadow-emerald-600/30 ring-2 ring-emerald-300/40",
+                              children: s.jsx(Nf, { className: "w-5 h-5 stroke-[2.5]" })
+                            }),
+                            s.jsxs("div", {
+                              children: [
+                                s.jsxs("div", {
+                                  className: "font-black text-sm text-slate-900 flex items-center space-x-2",
+                                  children: [
+                                    s.jsx("span", { children: "下载排课总览 Excel 表格" }),
+                                    s.jsxs("span", { className: "text-xs bg-emerald-200/80 text-emerald-900 font-mono px-2 py-0.5 rounded-full font-extrabold", children: [exportStats.totalLessons, " 节课次"] })
+                                  ]
+                                }),
+                                s.jsx("div", {
+                                  className: "text-xs text-slate-500 mt-0.5",
+                                  children: "包含完整的班级、授课教师、教材版本、课次序号与进度明细"
+                                })
+                              ]
+                            })
+                          ]
+                        }),
+                        s.jsxs("button", {
+                          type: "button",
+                          onClick: handleDownloadOverviewExcel,
+                          className: "w-full sm:w-auto px-5 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 active:scale-95 text-white font-black rounded-xl shadow-lg shadow-emerald-700/25 ring-2 ring-emerald-400/40 transition-all flex items-center justify-center space-x-2 text-xs cursor-pointer shrink-0",
+                          title: "立即下载排课总览 Excel 表格 (.csv / .xlsx)",
+                          children: [
+                            s.jsx(Nf, { className: "w-4 h-4 text-emerald-100 stroke-[2.5]" }),
+                            s.jsxs("span", { children: ["立即下载 Excel 表格"] })
+                          ]
+                        })
+                      ]
                     })
                   ]
                 })
@@ -1213,21 +1299,21 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
 
             // Modal Footer Actions
             s.jsxs("div", {
-              className: "p-4 border-t border-slate-200 bg-slate-50 flex items-center justify-between shrink-0",
+              className: "p-4 border-t border-slate-200 bg-slate-50 flex items-center justify-between shrink-0 shadow-xs",
               children: [
                 s.jsx("button", {
                   type: "button",
                   onClick: () => setIsExportExcelModalOpen(false),
-                  className: "px-4 py-2 bg-white hover:bg-slate-100 text-slate-700 font-bold rounded-xl border border-slate-200 transition-colors text-xs",
+                  className: "px-4 py-2 bg-white hover:bg-slate-100 text-slate-700 font-bold rounded-xl border border-slate-200 transition-colors text-xs cursor-pointer",
                   children: "取消"
                 }),
                 s.jsxs("button", {
                   type: "button",
                   onClick: handleDownloadOverviewExcel,
-                  disabled: exportMatchingLessons.length === 0,
-                  className: "px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 active:scale-[0.98] disabled:opacity-50 text-white font-black rounded-xl shadow-md shadow-emerald-700/25 ring-2 ring-emerald-400/30 transition-all flex items-center space-x-2 text-xs cursor-pointer",
+                  className: "px-6 py-2.5 bg-gradient-to-r from-emerald-600 to-teal-600 hover:from-emerald-700 hover:to-teal-700 active:scale-[0.98] text-white font-black rounded-xl shadow-md shadow-emerald-700/25 ring-2 ring-emerald-400/30 transition-all flex items-center space-x-2 text-xs cursor-pointer",
+                  title: "立即下载排课总览 Excel 表格",
                   children: [
-                    s.jsx(Nf, { className: "w-4 h-4 text-emerald-100 stroke-[2.5]" }),
+                    s.jsx(Nf, { className: "w-4.5 h-4.5 text-emerald-100 stroke-[2.5]" }),
                     s.jsxs("span", { children: ["立即下载排课总览 Excel 表格 (共 ", exportStats.totalLessons, " 节课)"] })
                   ]
                 })
