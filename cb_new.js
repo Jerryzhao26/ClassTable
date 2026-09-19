@@ -21,6 +21,7 @@ Cb=({schedules:r,levels:T,teachers:j,onSelectSchedule:u,onOpenQuickWizard:N,onDe
   const xe = _.useMemo(() => r.filter(O => {
     const Me = O.className.toLowerCase().includes(H.toLowerCase()) ||
                O.teacher.toLowerCase().includes(H.toLowerCase()) ||
+               (O.textbook || "").toLowerCase().includes(H.toLowerCase()) ||
                O.levelName.toLowerCase().includes(H.toLowerCase());
     const pe = b === "all" || O.levelId === b;
     const ye = S === "all" || O.frequency === S;

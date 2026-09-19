@@ -629,12 +629,30 @@ Error generating stack: `+a.message+`
   const [H, R] = _.useState(Q.year);
   const [b, X] = _.useState(Q.month);
   const [S, Z] = _.useState("all");
+  const [selectedTextbook, setSelectedTextbook] = _.useState("all");
   const [V, ie] = _.useState("all");
   const [Y, ae] = _.useState("");
   const [J, de] = _.useState(null);
   const [B, F] = _.useState("");
   const [ve, xe] = _.useState("");
   const [I, me] = _.useState("");
+
+  // Extract all available textbooks from templates and schedules
+  const allAvailableTextbooks = _.useMemo(() => {
+    const set = new Set();
+    if (Array.isArray(T)) {
+      T.forEach(t => {
+        if (t.textbook && t.textbook.trim()) set.add(t.textbook.trim());
+      });
+    }
+    if (Array.isArray(r)) {
+      r.forEach(s => {
+        const tb = s.textbook || (T && T.find(t => t.id === s.templateId)?.textbook);
+        if (tb && tb.trim()) set.add(tb.trim());
+      });
+    }
+    return Array.from(set).sort();
+  }, [T, r]);
 
   // Notice toast state
   const [notice, setNotice] = _.useState("");
@@ -713,6 +731,7 @@ Error generating stack: `+a.message+`
     return `${Q.year}-${mStr}-${String(lastDay).padStart(2, "0")}`;
   });
   const [exportTeacherFilter, setExportTeacherFilter] = _.useState("all");
+  const [exportTextbookFilter, setExportTextbookFilter] = _.useState("all");
   const [exportClassScope, setExportClassScope] = _.useState("all");
   const [includeStatus, setIncludeStatus] = _.useState({
     completed: true,
@@ -796,13 +815,15 @@ Error generating stack: `+a.message+`
   const P = _.useMemo(() => {
     const currentMonthStr = `${H}-${String(b + 1).padStart(2, "0")}`;
     return r.filter(y => {
+      const classTextbook = y.textbook || (T && T.find(t => t.id === y.templateId)?.textbook) || "未设教材";
+      const textbookMatch = selectedTextbook === "all" || classTextbook === selectedTextbook;
       const K = S === "all" || y.teacher === S,
         ce = V === "all" || y.levelName.includes(V),
-        te = Y === "" || y.className.toLowerCase().includes(Y.toLowerCase()) || y.teacher.toLowerCase().includes(Y.toLowerCase()) || y.classroom.toLowerCase().includes(Y.toLowerCase()),
+        te = Y === "" || y.className.toLowerCase().includes(Y.toLowerCase()) || y.teacher.toLowerCase().includes(Y.toLowerCase()) || y.classroom.toLowerCase().includes(Y.toLowerCase()) || classTextbook.toLowerCase().includes(Y.toLowerCase()),
         hasLessons = y.lessons && y.lessons.some(d => d.date && d.date.startsWith(currentMonthStr));
-      return K && ce && te && (!hideEmptyMonth || hasLessons);
+      return textbookMatch && K && ce && te && (!hideEmptyMonth || hasLessons);
     });
-  }, [r, S, V, Y, H, b, hideEmptyMonth]);
+  }, [r, S, selectedTextbook, V, Y, H, b, hideEmptyMonth, T]);
 
   const se = _.useMemo(() => {
     const y = `${H}-${String(b + 1).padStart(2, "0")}`;
@@ -832,6 +853,8 @@ Error generating stack: `+a.message+`
     const sourceSchedules = exportClassScope === "current" ? P : r;
     const list = [];
     sourceSchedules.forEach(sched => {
+      const classTextbook = sched.textbook || (T && T.find(t => t.id === sched.templateId)?.textbook) || "未设教材";
+      if (exportTextbookFilter !== "all" && classTextbook !== exportTextbookFilter) return;
       (sched.lessons || []).forEach(les => {
         if (!les.date) return;
         if (les.date < exportStartDate || les.date > exportEndDate) return;
@@ -842,7 +865,7 @@ Error generating stack: `+a.message+`
           scheduleId: sched.id,
           className: sched.className,
           levelName: sched.levelName || "",
-          textbook: sched.textbook || (T && T.find(t => t.id === sched.templateId)?.textbook) || "未设教材",
+          textbook: classTextbook,
           classFrequency: sched.frequency === "1x_week" ? "一周一次" : sched.frequency === "2x_week" ? "一周两次" : "多频/自定义",
           lessonId: les.id,
           lessonIndex: les.lessonIndex,
@@ -866,17 +889,18 @@ Error generating stack: `+a.message+`
       return a.className.localeCompare(b.className);
     });
     return list;
-  }, [r, P, exportClassScope, exportStartDate, exportEndDate, exportTeacherFilter, includeStatus]);
+  }, [r, P, exportClassScope, exportStartDate, exportEndDate, exportTeacherFilter, exportTextbookFilter, includeStatus, T]);
 
   const exportStats = _.useMemo(() => {
     const totalLessons = exportMatchingLessons.length;
     const uniqueClasses = new Set(exportMatchingLessons.map(x => x.className)).size;
     const uniqueTeachers = new Set(exportMatchingLessons.map(x => x.teacher).filter(Boolean)).size;
+    const uniqueTextbooks = new Set(exportMatchingLessons.map(x => x.textbook).filter(Boolean)).size;
     const completed = exportMatchingLessons.filter(x => x.status === "completed").length;
     const scheduled = exportMatchingLessons.filter(x => x.status === "scheduled").length;
     const cancelled = exportMatchingLessons.filter(x => x.status === "cancelled").length;
     const makeup = exportMatchingLessons.filter(x => x.status === "makeup").length;
-    return { totalLessons, uniqueClasses, uniqueTeachers, completed, scheduled, cancelled, makeup };
+    return { totalLessons, uniqueClasses, uniqueTeachers, uniqueTextbooks, completed, scheduled, cancelled, makeup };
   }, [exportMatchingLessons]);
 
   // One-click local backup
@@ -946,8 +970,10 @@ Error generating stack: `+a.message+`
     const metaRows = [
       [`Beavers Education (比伯斯教育) - 班级排课总览表`],
       [`导出时间区间:`, `${exportStartDate} 至 ${exportEndDate}`],
+      [`筛选教材版本:`, exportTextbookFilter === "all" ? "全部教材" : exportTextbookFilter],
+      [`筛选授课教师:`, exportTeacherFilter === "all" ? "全部教师" : exportTeacherFilter],
       [`导出时间:`, new Date().toLocaleString()],
-      [`统计概览:`, `覆盖班级: ${exportStats.uniqueClasses} 个`, `总课次: ${exportStats.totalLessons} 节`, `已上课: ${exportStats.completed} 节`, `待上课: ${exportStats.scheduled} 节`, `涉及教师: ${exportStats.uniqueTeachers} 位`],
+      [`统计概览:`, `覆盖班级: ${exportStats.uniqueClasses} 个`, `涵盖教材: ${exportStats.uniqueTextbooks} 种`, `总课次: ${exportStats.totalLessons} 节`, `已上课: ${exportStats.completed} 节`, `待上课: ${exportStats.scheduled} 节`, `涉及教师: ${exportStats.uniqueTeachers} 位`],
       []
     ];
 
@@ -1193,16 +1219,32 @@ Error generating stack: `+a.message+`
             className: "flex flex-wrap items-center gap-2.5 text-xs",
             children: [
               s.jsxs("div", {
-                className: "flex items-center space-x-1.5 bg-slate-50 px-3 py-1.5 rounded-full border border-slate-200",
+                className: `flex items-center space-x-1.5 px-3 py-1.5 rounded-full border transition-all shadow-2xs ${S !== "all" ? "bg-indigo-50/90 border-indigo-300 text-indigo-900 font-bold" : "bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300"}`,
                 children: [
-                  s.jsx(Io, { className: "w-3.5 h-3.5 text-slate-400" }),
+                  s.jsx(Io, { className: `w-3.5 h-3.5 ${S !== "all" ? "text-indigo-600" : "text-slate-400"}` }),
                   s.jsxs("select", {
                     value: S,
                     onChange: y => Z(y.target.value),
-                    className: "bg-transparent font-bold text-slate-700 focus:outline-none",
+                    className: "bg-transparent font-bold focus:outline-none cursor-pointer",
                     children: [
                       s.jsx("option", { value: "all", children: "全部授课教师" }),
                       j.map(y => s.jsx("option", { value: y.name, children: y.name }, y.id))
+                    ]
+                  })
+                ]
+              }),
+              s.jsxs("div", {
+                className: `flex items-center space-x-1.5 px-3 py-1.5 rounded-full border transition-all shadow-2xs ${selectedTextbook !== "all" ? "bg-amber-50/90 border-amber-300 text-amber-900 font-bold" : "bg-slate-50 border-slate-200 text-slate-700 hover:border-slate-300"}`,
+                title: "按教材版本维度筛选班级排课",
+                children: [
+                  s.jsx(Nt, { className: `w-3.5 h-3.5 ${selectedTextbook !== "all" ? "text-amber-700" : "text-amber-600"} shrink-0` }),
+                  s.jsxs("select", {
+                    value: selectedTextbook,
+                    onChange: y => setSelectedTextbook(y.target.value),
+                    className: "bg-transparent font-bold focus:outline-none cursor-pointer",
+                    children: [
+                      s.jsx("option", { value: "all", children: "全部教材版本" }),
+                      allAvailableTextbooks.map(tbName => s.jsx("option", { value: tbName, children: tbName }, tbName))
                     ]
                   })
                 ]
@@ -1215,8 +1257,8 @@ Error generating stack: `+a.message+`
                     type: "text",
                     value: Y,
                     onChange: y => ae(y.target.value),
-                    placeholder: "搜索班级名称...",
-                    className: "pl-8 pr-3 py-1.5 text-xs border border-slate-200 rounded-full bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 w-40"
+                    placeholder: "搜索班级/教师/教材...",
+                    className: "pl-8 pr-3 py-1.5 text-xs border border-slate-200 rounded-full bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20 w-44"
                   })
                 ]
               }),
@@ -1231,6 +1273,16 @@ Error generating stack: `+a.message+`
                   }),
                   s.jsx("span", { children: "自动隐藏当月无课班级" })
                 ]
+              }),
+              (selectedTextbook !== "all" || S !== "all" || Y !== "") && s.jsx("button", {
+                type: "button",
+                onClick: () => {
+                  setSelectedTextbook("all");
+                  Z("all");
+                  ae("");
+                },
+                className: "text-[11px] text-indigo-600 hover:text-indigo-800 underline font-bold cursor-pointer px-1 py-0.5",
+                children: "清除筛选"
               })
             ]
           }),
@@ -1669,15 +1721,29 @@ Error generating stack: `+a.message+`
 
                 // Filter controls
                 s.jsxs("div", {
-                  className: "grid grid-cols-1 sm:grid-cols-2 gap-3",
+                  className: "grid grid-cols-1 sm:grid-cols-3 gap-3",
                   children: [
                     s.jsxs("div", {
                       children: [
-                        s.jsx("label", { className: "block font-bold text-slate-700 mb-1", children: "2. 授课教师筛选" }),
+                        s.jsx("label", { className: "block font-bold text-slate-700 mb-1", children: "2. 教材版本筛选" }),
+                        s.jsxs("select", {
+                          value: exportTextbookFilter,
+                          onChange: e => setExportTextbookFilter(e.target.value),
+                          className: "w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl font-bold text-slate-800 focus:bg-white focus:outline-none focus:border-indigo-600 cursor-pointer",
+                          children: [
+                            s.jsx("option", { value: "all", children: "全部教材版本 (不限)" }),
+                            allAvailableTextbooks.map(tbName => s.jsx("option", { value: tbName, children: tbName }, tbName))
+                          ]
+                        })
+                      ]
+                    }),
+                    s.jsxs("div", {
+                      children: [
+                        s.jsx("label", { className: "block font-bold text-slate-700 mb-1", children: "3. 授课教师筛选" }),
                         s.jsxs("select", {
                           value: exportTeacherFilter,
                           onChange: e => setExportTeacherFilter(e.target.value),
-                          className: "w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl font-bold text-slate-800 focus:bg-white focus:outline-none focus:border-indigo-600",
+                          className: "w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl font-bold text-slate-800 focus:bg-white focus:outline-none focus:border-indigo-600 cursor-pointer",
                           children: [
                             s.jsx("option", { value: "all", children: "全部授课教师 (不限)" }),
                             j.map(teach => s.jsx("option", { value: teach.name, children: teach.name }, teach.id))
@@ -1687,11 +1753,11 @@ Error generating stack: `+a.message+`
                     }),
                     s.jsxs("div", {
                       children: [
-                        s.jsx("label", { className: "block font-bold text-slate-700 mb-1", children: "3. 班级范围" }),
+                        s.jsx("label", { className: "block font-bold text-slate-700 mb-1", children: "4. 班级范围" }),
                         s.jsxs("select", {
                           value: exportClassScope,
                           onChange: e => setExportClassScope(e.target.value),
-                          className: "w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl font-bold text-slate-800 focus:bg-white focus:outline-none focus:border-indigo-600",
+                          className: "w-full px-3 py-2 bg-slate-50 border border-slate-200 rounded-xl font-bold text-slate-800 focus:bg-white focus:outline-none focus:border-indigo-600 cursor-pointer",
                           children: [
                             s.jsxs("option", { value: "all", children: ["全部在读班级 (共 ", r.length, " 个班)"] }),
                             s.jsxs("option", { value: "current", children: ["当前总览筛选班级 (共 ", P.length, " 个班)"] })
@@ -1706,7 +1772,7 @@ Error generating stack: `+a.message+`
                 s.jsxs("div", {
                   className: "space-y-1.5",
                   children: [
-                    s.jsx("label", { className: "block font-bold text-slate-700", children: "4. 导出课次状态包含" }),
+                    s.jsx("label", { className: "block font-bold text-slate-700", children: "5. 导出课次状态包含" }),
                     s.jsxs("div", {
                       className: "flex flex-wrap gap-4 pt-1",
                       children: [
@@ -1793,13 +1859,20 @@ Error generating stack: `+a.message+`
                       ]
                     }),
                     s.jsxs("div", {
-                      className: "grid grid-cols-2 sm:grid-cols-4 gap-2 text-center",
+                      className: "grid grid-cols-2 sm:grid-cols-5 gap-2 text-center",
                       children: [
                         s.jsxs("div", {
                           className: "bg-white p-2 rounded-lg border border-slate-100",
                           children: [
                             s.jsx("span", { className: "text-[10px] text-slate-400 block", children: "覆盖班级" }),
                             s.jsxs("span", { className: "font-black text-slate-800 text-sm", children: [exportStats.uniqueClasses, " 个"] })
+                          ]
+                        }),
+                        s.jsxs("div", {
+                          className: "bg-white p-2 rounded-lg border border-slate-100",
+                          children: [
+                            s.jsx("span", { className: "text-[10px] text-slate-400 block", children: "涵盖教材" }),
+                            s.jsxs("span", { className: "font-black text-amber-700 text-sm", children: [exportStats.uniqueTextbooks, " 种"] })
                           ]
                         }),
                         s.jsxs("div", {
@@ -1843,6 +1916,7 @@ Error generating stack: `+a.message+`
                                   s.jsx("span", { className: "font-bold text-slate-800", children: item.date }),
                                   s.jsx("span", { className: "text-slate-400", children: item.dayOfWeekStr }),
                                   s.jsx("span", { className: "font-bold text-indigo-600 truncate", children: item.className }),
+                                  s.jsx("span", { className: "text-[10px] font-bold bg-amber-50 text-amber-800 px-1.5 py-0.2 rounded border border-amber-200/80 truncate max-w-[120px]", children: item.textbook }),
                                   s.jsx("span", { className: "text-slate-500", children: item.lessonCode })
                                 ]
                               }),
@@ -2064,6 +2138,7 @@ Error generating stack: `+a.message+`
   const xe = _.useMemo(() => r.filter(O => {
     const Me = O.className.toLowerCase().includes(H.toLowerCase()) ||
                O.teacher.toLowerCase().includes(H.toLowerCase()) ||
+               (O.textbook || "").toLowerCase().includes(H.toLowerCase()) ||
                O.levelName.toLowerCase().includes(H.toLowerCase());
     const pe = b === "all" || O.levelId === b;
     const ye = S === "all" || O.frequency === S;
