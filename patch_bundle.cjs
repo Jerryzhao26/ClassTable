@@ -79,6 +79,17 @@ if (!afterEb.includes(oldRbSyncTarget)) {
 }
 afterEb = afterEb.replace(oldRbSyncTarget, newRbBackupCard);
 
+// 6. In Ab (schedule wizard), dynamically generate quick month intervals including next month (e.g., 8月, 9月, 10月 when in 9月)
+const oldQuickMonthTarget = 's.jsxs("div",{className:"flex items-center space-x-2 pt-1 flex-wrap gap-y-1",children:[s.jsx("span",{className:"text-[11px] font-bold text-slate-400",children:"快速设置月份区间:"}),s.jsx("button",{type:"button",onClick:()=>{te("2026-07-01"),C("2026-07-31")},className:"text-[11px] font-bold px-2.5 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg transition-colors",children:"7月份 (7/1 - 7/31)"}),s.jsx("button",{type:"button",onClick:()=>{te("2026-08-01"),C("2026-08-31")},className:"text-[11px] font-bold px-2.5 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg transition-colors",children:"8月份 (8/1 - 8/31)"}),s.jsx("button",{type:"button",onClick:()=>{te("2026-09-01"),C("2026-09-30")},className:"text-[11px] font-bold px-2.5 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg transition-colors",children:"9月份 (9/1 - 9/30)"})]})';
+
+const newQuickMonth = 's.jsxs("div",{className:"flex items-center space-x-2 pt-1 flex-wrap gap-y-1",children:[s.jsx("span",{className:"text-[11px] font-bold text-slate-400",children:"快速设置月份区间:"}),...[-1,0,1].map(offset=>{const base=new Date,target=new Date(base.getFullYear(),base.getMonth()+offset,1),y=target.getFullYear(),m=target.getMonth()+1,lastDay=new Date(y,m,0).getDate(),mPad=String(m).padStart(2,"0"),start=`${y}-${mPad}-01`,end=`${y}-${mPad}-${String(lastDay).padStart(2,"0")}`,isActive=ce===start&&d===end;return s.jsx("button",{key:offset,type:"button",onClick:()=>{te(start),C(end)},className:isActive?"text-[11px] font-bold px-2.5 py-1 bg-indigo-600 text-white border border-indigo-600 rounded-lg transition-colors shadow-2xs":"text-[11px] font-bold px-2.5 py-1 bg-indigo-50 hover:bg-indigo-100 text-indigo-700 border border-indigo-200 rounded-lg transition-colors",children:`${m}月份 (${m}/1 - ${m}/${lastDay})`})})]})';
+
+if (!afterEb.includes(oldQuickMonthTarget)) {
+  console.error('oldQuickMonthTarget not found in afterEb');
+  process.exit(1);
+}
+afterEb = afterEb.replace(oldQuickMonthTarget, newQuickMonth);
+
 // Construct new bundle with updated components: _b, Tb, Cb, Eb
 let newBundle = beforeHb + hb_new + ',' + tb_new + ',' + cb_new + ',' + eb_new + afterEb;
 
