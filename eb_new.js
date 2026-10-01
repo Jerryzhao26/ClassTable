@@ -29,6 +29,192 @@ Eb=({schedule:r,templates:T=[],holidays:j=[],onUpdateSchedule:u,onDeleteSchedule
   const [autoRenumberLessons, setAutoRenumberLessons] = _.useState(true);
   const [singleLessonToDelete, setSingleLessonToDelete] = _.useState(null);
 
+  // Insert lesson state & helpers
+  const [isInsertLessonModalOpen, setIsInsertLessonModalOpen] = _.useState(false);
+  const [insertTargetPosition, setInsertTargetPosition] = _.useState(1);
+  const [insertLessonCode, setInsertLessonCode] = _.useState("Review 1");
+  const [insertLessonTopic, setInsertLessonTopic] = _.useState("阶段知识点综合复习与测评");
+  const [insertLessonTeacher, setInsertLessonTeacher] = _.useState(r.teacher);
+  const [insertLessonClassroom, setInsertLessonClassroom] = _.useState(r.classroom);
+  const [insertLessonNote, setInsertLessonNote] = _.useState("特定插入课次");
+  const [insertDateMode, setInsertDateMode] = _.useState("slot_shift"); // "slot_shift" | "custom"
+  const [insertCustomDate, setInsertCustomDate] = _.useState(r.startDate || "");
+  const [insertCustomTimeSlot, setInsertCustomTimeSlot] = _.useState("");
+  const [insertAutoShiftSubsequent, setInsertAutoShiftSubsequent] = _.useState(true);
+
+  const insertPresets = [
+    { label: "🎯 复习课 (Review)", code: "Review", topic: "阶段知识点综合复习与重点强化", note: "阶段复习加课" },
+    { label: "📝 阶段测验 (Quiz)", code: "Quiz", topic: "单元知识点测评与随堂测验", note: "阶段测验" },
+    { label: "🏆 期中考 (Midterm)", code: "Midterm", topic: "期中能力综合测评与诊断", note: "期中考试" },
+    { label: "🏅 期末总复习 (Final)", code: "Final Exam", topic: "期末全真结课总复习与综合评定", note: "期末总评" },
+    { label: "💡 补课答疑 (Makeup)", code: "Makeup", topic: "难点攻坚与个别答疑加练", note: "补课答疑" },
+    { label: "🎉 活动拓展 (Activity)", code: "Activity", topic: "阶段性教学成果汇报与实践课", note: "活动拓展课" }
+  ];
+
+  const getNextSlotDate = (afterDateStr, slots, holidaysList = []) => {
+    let d = new Date(afterDateStr + "T00:00:00");
+    d.setDate(d.getDate() + 1);
+    const validSlots = slots && slots.length > 0 ? slots : [{ dayOfWeek: 3, startTime: "17:00", endTime: "18:30" }, { dayOfWeek: 6, startTime: "09:30", endTime: "11:00" }];
+    const isValid = (dt) => {
+      const dow = dt.getDay();
+      if (!validSlots.some(s => s.dayOfWeek === dow)) return false;
+      const yr = dt.getFullYear();
+      const mo = String(dt.getMonth() + 1).padStart(2, "0");
+      const dy = String(dt.getDate()).padStart(2, "0");
+      const dStr = yr + "-" + mo + "-" + dy;
+      if (holidaysList && holidaysList.length) {
+        if (holidaysList.some(h => (h.date === dStr) || (h.startDate && h.endDate && dStr >= h.startDate && dStr <= h.endDate))) {
+          return false;
+        }
+      }
+      return true;
+    };
+    let safetyCounter = 0;
+    while (!isValid(d) && safetyCounter < 180) {
+      d.setDate(d.getDate() + 1);
+      safetyCounter++;
+    }
+    const yr = d.getFullYear();
+    const mo = String(d.getMonth() + 1).padStart(2, "0");
+    const dy = String(d.getDate()).padStart(2, "0");
+    const dow = d.getDay();
+    const slot = validSlots.find(s => s.dayOfWeek === dow) || validSlots[0];
+    return {
+      date: yr + "-" + mo + "-" + dy,
+      dayOfWeekStr: al[dow],
+      timeSlot: slot ? (slot.startTime + "-" + slot.endTime) : "17:00-18:30"
+    };
+  };
+
+  const openInsertLessonModal = (afterLessonIndex) => {
+    const pos = afterLessonIndex !== undefined ? Math.max(1, Math.min(afterLessonIndex + 1, r.lessons.length + 1)) : r.lessons.length + 1;
+    setInsertTargetPosition(pos);
+    setInsertLessonCode("Review 1");
+    setInsertLessonTopic("阶段知识点综合复习与测评");
+    setInsertLessonTeacher(r.teacher);
+    setInsertLessonClassroom(r.classroom);
+    setInsertLessonNote("特定插入课次");
+    setInsertDateMode("slot_shift");
+    setInsertAutoShiftSubsequent(true);
+
+    const targetIdx = pos - 1;
+    if (targetIdx < r.lessons.length) {
+      setInsertCustomDate(r.lessons[targetIdx].date);
+      setInsertCustomTimeSlot(r.lessons[targetIdx].timeSlot);
+    } else if (r.lessons.length > 0) {
+      const nextInfo = getNextSlotDate(r.lessons[r.lessons.length - 1].date, r.slots, j);
+      setInsertCustomDate(nextInfo.date);
+      setInsertCustomTimeSlot(nextInfo.timeSlot);
+    } else {
+      setInsertCustomDate(r.startDate || new Date().toISOString().split("T")[0]);
+      setInsertCustomTimeSlot("17:00-18:30");
+    }
+    setIsInsertLessonModalOpen(true);
+  };
+
+  const handleConfirmInsertLesson = () => {
+    if (!insertLessonCode.trim()) {
+      alert("请输入课次编号（例如 Review 1）");
+      return;
+    }
+    re(prev => [...prev, r]);
+    const orig = [...r.lessons];
+    const targetIdx = Math.max(0, Math.min(insertTargetPosition - 1, orig.length));
+    const slots = r.slots && r.slots.length > 0 ? r.slots : [{ dayOfWeek: 3, startTime: "17:00", endTime: "18:30" }, { dayOfWeek: 6, startTime: "09:30", endTime: "11:00" }];
+
+    let newDate = "";
+    let newDow = "";
+    let newTime = "";
+
+    const shiftedOrig = orig.map(l => ({ ...l }));
+
+    if (insertAutoShiftSubsequent) {
+      if (insertDateMode === "slot_shift") {
+        if (targetIdx < orig.length) {
+          newDate = orig[targetIdx].date;
+          newDow = orig[targetIdx].dayOfWeekStr;
+          newTime = orig[targetIdx].timeSlot;
+
+          for (let i = targetIdx; i < orig.length; i++) {
+            if (i + 1 < orig.length) {
+              shiftedOrig[i].date = orig[i + 1].date;
+              shiftedOrig[i].dayOfWeekStr = orig[i + 1].dayOfWeekStr;
+              shiftedOrig[i].timeSlot = orig[i + 1].timeSlot;
+            } else {
+              const nextInfo = getNextSlotDate(orig[orig.length - 1].date, slots, j);
+              shiftedOrig[i].date = nextInfo.date;
+              shiftedOrig[i].dayOfWeekStr = nextInfo.dayOfWeekStr;
+              shiftedOrig[i].timeSlot = nextInfo.timeSlot;
+            }
+          }
+        } else {
+          const nextInfo = orig.length > 0 ? getNextSlotDate(orig[orig.length - 1].date, slots, j) : { date: r.startDate, dayOfWeekStr: "周一", timeSlot: "17:00-18:30" };
+          newDate = nextInfo.date;
+          newDow = nextInfo.dayOfWeekStr;
+          newTime = nextInfo.timeSlot;
+        }
+      } else {
+        newDate = insertCustomDate;
+        const dObj = new Date(insertCustomDate + "T00:00:00");
+        newDow = al[dObj.getDay()];
+        newTime = insertCustomTimeSlot || (slots[0] ? (slots[0].startTime + "-" + slots[0].endTime) : "17:00-18:30");
+
+        for (let i = targetIdx; i < orig.length; i++) {
+          if (i + 1 < orig.length) {
+            shiftedOrig[i].date = orig[i + 1].date;
+            shiftedOrig[i].dayOfWeekStr = orig[i + 1].dayOfWeekStr;
+            shiftedOrig[i].timeSlot = orig[i + 1].timeSlot;
+          } else {
+            const nextInfo = getNextSlotDate(orig[orig.length - 1].date, slots, j);
+            shiftedOrig[i].date = nextInfo.date;
+            shiftedOrig[i].dayOfWeekStr = nextInfo.dayOfWeekStr;
+            shiftedOrig[i].timeSlot = nextInfo.timeSlot;
+          }
+        }
+      }
+    } else {
+      newDate = insertCustomDate || (targetIdx < orig.length ? orig[targetIdx].date : r.startDate);
+      const dObj = new Date(newDate + "T00:00:00");
+      newDow = al[dObj.getDay()];
+      newTime = insertCustomTimeSlot || (targetIdx < orig.length ? orig[targetIdx].timeSlot : (slots[0] ? (slots[0].startTime + "-" + slots[0].endTime) : "17:00-18:30"));
+    }
+
+    const createdLesson = {
+      id: "les_ins_" + Date.now() + "_" + Math.random().toString(36).substring(2, 7),
+      lessonIndex: targetIdx + 1,
+      date: newDate,
+      dayOfWeekStr: newDow,
+      timeSlot: newTime,
+      lessonCode: insertLessonCode.trim(),
+      topic: insertLessonTopic.trim() || "特定插入课次",
+      teacher: insertLessonTeacher.trim() || r.teacher,
+      classroom: insertLessonClassroom.trim() || r.classroom,
+      status: "scheduled",
+      note: insertLessonNote.trim() || "特定插入课次"
+    };
+
+    const resultLessons = [
+      ...shiftedOrig.slice(0, targetIdx),
+      createdLesson,
+      ...shiftedOrig.slice(targetIdx)
+    ].map((les, idx) => ({ ...les, lessonIndex: idx + 1 }));
+
+    const lastLesson = resultLessons[resultLessons.length - 1];
+    const newSchedule = {
+      ...r,
+      lessons: resultLessons,
+      totalLessons: resultLessons.length,
+      endDate: lastLesson ? lastLesson.date : r.endDate,
+      updatedAt: new Date().toISOString().split("T")[0]
+    };
+
+    u(newSchedule);
+    setIsInsertLessonModalOpen(false);
+    const shiftedCount = insertAutoShiftSubsequent ? Math.max(0, orig.length - targetIdx) : 0;
+    Qe("🎉 已成功在第 " + (targetIdx + 1) + " 课插入【" + createdLesson.lessonCode + " - " + createdLesson.topic + "】" + (shiftedCount > 0 ? "，后续 " + shiftedCount + " 节课次已自动往后顺延！" : "！"));
+    setTimeout(() => Qe(""), 4500);
+  };
+
   const Mt = r.lessons.filter(M => {
     const ze = H === "all" ||
                (H === "completed" && M.status === "completed") ||
@@ -426,6 +612,23 @@ Eb=({schedule:r,templates:T=[],holidays:j=[],onUpdateSchedule:u,onDeleteSchedule
                 ]
               }),
               s.jsxs("button", {
+                type: "button",
+                onClick: () => openInsertLessonModal(r.lessons.length),
+                className: "px-3 py-1.5 bg-emerald-600 hover:bg-emerald-700 text-white rounded-full text-xs font-bold transition-all shadow-xs flex items-center space-x-1 hover:scale-[1.02]",
+                title: "在已有课表中插入特定课次，并自动将后续课次往后顺延",
+                children: [
+                  s.jsx("svg", {
+                    className: "w-3.5 h-3.5 text-white",
+                    fill: "none",
+                    viewBox: "0 0 24 24",
+                    stroke: "currentColor",
+                    strokeWidth: 2.5,
+                    children: s.jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 4.5v15m7.5-7.5h-15" })
+                  }),
+                  s.jsx("span", { children: "插入特定课次" })
+                ]
+              }),
+              s.jsxs("button", {
                 onClick: () => ae(!0),
                 className: "px-3 py-1.5 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-full text-xs font-bold transition-colors flex items-center space-x-1",
                 title: "因天气或突发休课，一键顺延后续所有课次",
@@ -512,7 +715,7 @@ Eb=({schedule:r,templates:T=[],holidays:j=[],onUpdateSchedule:u,onDeleteSchedule
                   s.jsx("th", { className: "py-3 px-3 w-24 text-[11px]", children: "授课老师" }),
                   s.jsx("th", { className: "py-3 px-3 w-20 text-[11px]", children: "教室" }),
                   s.jsx("th", { className: "py-3 px-3 w-32 text-[11px]", children: "备注/休课因由" }),
-                  s.jsx("th", { className: "py-3 px-3 w-28 text-center text-[11px]", children: "快捷操作" })
+                  s.jsx("th", { className: "py-3 px-3 w-36 text-center text-[11px]", children: "快捷操作" })
                 ]
               })
             }),
@@ -586,12 +789,29 @@ Eb=({schedule:r,templates:T=[],holidays:j=[],onUpdateSchedule:u,onDeleteSchedule
                       })
                     }),
                     s.jsxs("td", {
-                      className: "py-2.5 px-3 text-center space-x-1.5 whitespace-nowrap",
+                      className: "py-2.5 px-3 text-center space-x-1 whitespace-nowrap",
                       children: [
                         s.jsxs("button", {
                           type: "button",
+                          onClick: () => openInsertLessonModal(M.lessonIndex),
+                          className: "inline-flex items-center space-x-0.5 px-2 py-1 bg-emerald-50 hover:bg-emerald-100 text-emerald-800 border border-emerald-200 rounded-md text-[10px] font-bold transition-all shadow-2xs",
+                          title: "在此课（第 " + M.lessonIndex + " 课）后插入新课次并自动顺延后续课次",
+                          children: [
+                            s.jsx("svg", {
+                              className: "w-2.5 h-2.5 text-emerald-600",
+                              fill: "none",
+                              viewBox: "0 0 24 24",
+                              stroke: "currentColor",
+                              strokeWidth: 2.5,
+                              children: s.jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 4.5v15m7.5-7.5h-15" })
+                            }),
+                            s.jsx("span", { children: "插课" })
+                          ]
+                        }),
+                        s.jsxs("button", {
+                          type: "button",
                           onClick: () => { xe(M.lessonIndex); me(1); F(!0); },
-                          className: "inline-flex items-center space-x-1 px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-md text-[10px] font-bold transition-all shadow-2xs",
+                          className: "inline-flex items-center space-x-0.5 px-2 py-1 bg-amber-50 hover:bg-amber-100 text-amber-800 border border-amber-200 rounded-md text-[10px] font-bold transition-all shadow-2xs",
                           title: "顺延此课：将第 " + M.lessonIndex + " 课及后续所有课程顺延 1 次课",
                           children: [
                             s.jsx(Na, { className: "w-3 h-3 text-amber-600" }),
@@ -1141,6 +1361,360 @@ Eb=({schedule:r,templates:T=[],holidays:j=[],onUpdateSchedule:u,onDeleteSchedule
                   children: [
                     s.jsx(Tt, { className: "w-4 h-4" }),
                     s.jsxs("span", { children: ["确认批量删除 (", selectedLessonIds.size, " 节课)"] })
+                  ]
+                })
+              ]
+            })
+          ]
+        })
+      }),
+      isInsertLessonModalOpen && s.jsx("div", {
+        className: "fixed inset-0 z-50 bg-slate-900/50 backdrop-blur-xs flex items-center justify-center p-4",
+        children: s.jsxs("div", {
+          className: "bg-white rounded-2xl p-6 max-w-xl w-full shadow-2xl border border-slate-200 space-y-4 animate-scaleUp max-h-[92vh] overflow-y-auto",
+          children: [
+            s.jsxs("div", {
+              className: "flex items-center justify-between border-b border-slate-100 pb-3",
+              children: [
+                s.jsxs("div", {
+                  className: "flex items-center space-x-3",
+                  children: [
+                    s.jsx("div", {
+                      className: "w-10 h-10 rounded-full bg-emerald-50 border border-emerald-200 flex items-center justify-center shrink-0",
+                      children: s.jsx("svg", {
+                        className: "w-5 h-5 text-emerald-600",
+                        fill: "none",
+                        viewBox: "0 0 24 24",
+                        stroke: "currentColor",
+                        strokeWidth: 2.5,
+                        children: s.jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 4.5v15m7.5-7.5h-15" })
+                      })
+                    }),
+                    s.jsxs("div", {
+                      children: [
+                        s.jsx("h3", { className: "font-extrabold text-slate-900 text-base", children: "在班级课表中插入特定课次" }),
+                        s.jsx("p", { className: "text-xs text-slate-500", children: "在指定课次处插入新课程，支持将后续课次自动依次往后顺延" })
+                      ]
+                    })
+                  ]
+                }),
+                s.jsx("button", {
+                  type: "button",
+                  onClick: () => setIsInsertLessonModalOpen(false),
+                  className: "text-slate-400 hover:text-slate-600 text-lg font-bold p-1 rounded-full hover:bg-slate-100 transition-colors",
+                  children: "✕"
+                })
+              ]
+            }),
+            s.jsxs("div", {
+              className: "space-y-4 text-xs",
+              children: [
+                s.jsxs("div", {
+                  children: [
+                    s.jsxs("label", {
+                      className: "block font-bold text-slate-700 mb-1 flex items-center space-x-1.5",
+                      children: [
+                        s.jsx(rs, { className: "w-3.5 h-3.5 text-indigo-600" }),
+                        s.jsx("span", { children: "1. 插入位置选择" }),
+                        s.jsx("span", { className: "text-rose-500", children: "*" })
+                      ]
+                    }),
+                    s.jsxs("select", {
+                      value: insertTargetPosition,
+                      onChange: e => {
+                        const pos = parseInt(e.target.value) || 1;
+                        setInsertTargetPosition(pos);
+                        const targetIdx = pos - 1;
+                        if (targetIdx < r.lessons.length) {
+                          setInsertCustomDate(r.lessons[targetIdx].date);
+                          setInsertCustomTimeSlot(r.lessons[targetIdx].timeSlot);
+                        } else if (r.lessons.length > 0) {
+                          const nextInfo = getNextSlotDate(r.lessons[r.lessons.length - 1].date, r.slots, j);
+                          setInsertCustomDate(nextInfo.date);
+                          setInsertCustomTimeSlot(nextInfo.timeSlot);
+                        }
+                      },
+                      className: "w-full px-3 py-2 border border-slate-200 rounded-xl bg-slate-50 font-bold text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-500/20",
+                      children: [
+                        s.jsx("option", { value: 1, children: "第 1 课之前 (作为新的第 1 课插入)" }),
+                        r.lessons.map(les => s.jsxs("option", {
+                          value: les.lessonIndex + 1,
+                          children: ["第 ", les.lessonIndex, " 课之后 (作为第 ", les.lessonIndex + 1, " 课插入) - 原【", les.lessonCode, ": ", les.topic.length > 18 ? les.topic.substring(0, 18) + "..." : les.topic, "】之后"]
+                        }, les.id))
+                      ]
+                    })
+                  ]
+                }),
+                s.jsxs("div", {
+                  className: "space-y-1.5",
+                  children: [
+                    s.jsx("span", { className: "text-[11px] font-bold text-slate-400 block", children: "快捷选择课次类型预设：" }),
+                    s.jsx("div", {
+                      className: "flex flex-wrap gap-1.5",
+                      children: insertPresets.map(preset => s.jsx("button", {
+                        key: preset.code,
+                        type: "button",
+                        onClick: () => {
+                          setInsertLessonCode(preset.code);
+                          setInsertLessonTopic(preset.topic);
+                          setInsertLessonNote(preset.note);
+                        },
+                        className: "px-2.5 py-1 text-[11px] font-bold bg-slate-100 hover:bg-emerald-50 text-slate-700 hover:text-emerald-800 border border-slate-200 hover:border-emerald-300 rounded-lg transition-colors",
+                        children: preset.label
+                      }))
+                    })
+                  ]
+                }),
+                s.jsxs("div", {
+                  className: "grid grid-cols-1 sm:grid-cols-2 gap-3",
+                  children: [
+                    s.jsxs("div", {
+                      children: [
+                        s.jsxs("label", {
+                          className: "block font-bold text-slate-700 mb-1",
+                          children: ["课次编号 (Code) ", s.jsx("span", { className: "text-rose-500", children: "*" })]
+                        }),
+                        s.jsx("input", {
+                          type: "text",
+                          value: insertLessonCode,
+                          onChange: e => setInsertLessonCode(e.target.value),
+                          placeholder: "例如: Review 1, Quiz 1, U2-加课",
+                          className: "w-full px-3 py-2 border border-slate-200 rounded-xl font-mono font-bold text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+                        })
+                      ]
+                    }),
+                    s.jsxs("div", {
+                      children: [
+                        s.jsxs("label", {
+                          className: "block font-bold text-slate-700 mb-1",
+                          children: ["课堂内容/主题 (Topic) ", s.jsx("span", { className: "text-rose-500", children: "*" })]
+                        }),
+                        s.jsx("input", {
+                          type: "text",
+                          value: insertLessonTopic,
+                          onChange: e => setInsertLessonTopic(e.target.value),
+                          placeholder: "例如: 阶段核心词汇语法综合复习",
+                          className: "w-full px-3 py-2 border border-slate-200 rounded-xl font-medium text-slate-900 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+                        })
+                      ]
+                    })
+                  ]
+                }),
+                s.jsxs("div", {
+                  className: "grid grid-cols-2 gap-3",
+                  children: [
+                    s.jsxs("div", {
+                      children: [
+                        s.jsx("label", { className: "block font-bold text-slate-700 mb-1", children: "授课老师" }),
+                        s.jsx("input", {
+                          type: "text",
+                          value: insertLessonTeacher,
+                          onChange: e => setInsertLessonTeacher(e.target.value),
+                          className: "w-full px-3 py-2 border border-slate-200 rounded-xl text-slate-800 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+                        })
+                      ]
+                    }),
+                    s.jsxs("div", {
+                      children: [
+                        s.jsx("label", { className: "block font-bold text-slate-700 mb-1", children: "上课教室" }),
+                        s.jsx("input", {
+                          type: "text",
+                          value: insertLessonClassroom,
+                          onChange: e => setInsertLessonClassroom(e.target.value),
+                          className: "w-full px-3 py-2 border border-slate-200 rounded-xl text-slate-800 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+                        })
+                      ]
+                    })
+                  ]
+                }),
+                s.jsxs("div", {
+                  children: [
+                    s.jsx("label", { className: "block font-bold text-slate-700 mb-1", children: "课次备注说明" }),
+                    s.jsx("input", {
+                      type: "text",
+                      value: insertLessonNote,
+                      onChange: e => setInsertLessonNote(e.target.value),
+                      placeholder: "例如: 期中加练 / 阶段综合复习",
+                      className: "w-full px-3 py-2 border border-slate-200 rounded-xl text-slate-800 bg-slate-50 focus:bg-white focus:outline-none focus:ring-2 focus:ring-emerald-500/20"
+                    })
+                  ]
+                }),
+                s.jsxs("div", {
+                  className: "p-3.5 bg-slate-50 rounded-xl border border-slate-200 space-y-3",
+                  children: [
+                    s.jsxs("div", {
+                      className: "flex items-center space-x-2 text-slate-800 font-bold",
+                      children: [
+                        s.jsx(Na, { className: "w-4 h-4 text-emerald-600" }),
+                        s.jsx("span", { children: "上课时间与顺延模式" })
+                      ]
+                    }),
+                    s.jsxs("div", {
+                      className: "space-y-2",
+                      children: [
+                        s.jsxs("label", {
+                          className: "flex items-start space-x-2.5 p-2.5 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-emerald-300 transition-colors",
+                          children: [
+                            s.jsx("input", {
+                              type: "radio",
+                              name: "insertDateMode",
+                              value: "slot_shift",
+                              checked: insertDateMode === "slot_shift",
+                              onChange: () => setInsertDateMode("slot_shift"),
+                              className: "mt-0.5 text-emerald-600 focus:ring-emerald-500"
+                            }),
+                            s.jsxs("div", {
+                              className: "text-xs",
+                              children: [
+                                s.jsx("div", { className: "font-bold text-slate-900", children: "按固定周期顺延排课 (推荐)" }),
+                                s.jsx("div", { className: "text-slate-500 text-[11px]", children: "新课次直接占用该课次排课日，原课次及后续所有课次顺次往后推迟 1 个排课周期，结课日期自动顺延。" })
+                              ]
+                            })
+                          ]
+                        }),
+                        s.jsxs("label", {
+                          className: "flex items-start space-x-2.5 p-2.5 bg-white border border-slate-200 rounded-lg cursor-pointer hover:border-emerald-300 transition-colors",
+                          children: [
+                            s.jsx("input", {
+                              type: "radio",
+                              name: "insertDateMode",
+                              value: "custom",
+                              checked: insertDateMode === "custom",
+                              onChange: () => setInsertDateMode("custom"),
+                              className: "mt-0.5 text-emerald-600 focus:ring-emerald-500"
+                            }),
+                            s.jsxs("div", {
+                              className: "text-xs w-full",
+                              children: [
+                                s.jsx("div", { className: "font-bold text-slate-900", children: "自定义指定新课日期与时段" }),
+                                s.jsx("div", { className: "text-slate-500 text-[11px] mb-2", children: "手动指定新课的具体日期与时间，适用于节假日或周末临时集中加课。" }),
+                                insertDateMode === "custom" && s.jsxs("div", {
+                                  className: "grid grid-cols-2 gap-2 mt-2 pt-2 border-t border-slate-100",
+                                  children: [
+                                    s.jsxs("div", {
+                                      children: [
+                                        s.jsx("span", { className: "block text-[11px] font-bold text-slate-600 mb-1", children: "新课上课日期" }),
+                                        s.jsx("input", {
+                                          type: "date",
+                                          value: insertCustomDate,
+                                          onChange: e => setInsertCustomDate(e.target.value),
+                                          className: "w-full px-2 py-1 border border-slate-200 rounded-md text-xs font-bold"
+                                        })
+                                      ]
+                                    }),
+                                    s.jsxs("div", {
+                                      children: [
+                                        s.jsx("span", { className: "block text-[11px] font-bold text-slate-600 mb-1", children: "新课时间段" }),
+                                        s.jsx("input", {
+                                          type: "text",
+                                          value: insertCustomTimeSlot,
+                                          onChange: e => setInsertCustomTimeSlot(e.target.value),
+                                          placeholder: "例如 17:00-18:30",
+                                          className: "w-full px-2 py-1 border border-slate-200 rounded-md text-xs font-bold"
+                                        })
+                                      ]
+                                    })
+                                  ]
+                                })
+                              ]
+                            })
+                          ]
+                        })
+                      ]
+                    }),
+                    s.jsxs("div", {
+                      className: "pt-1 flex items-center space-x-2",
+                      children: [
+                        s.jsx("input", {
+                          type: "checkbox",
+                          id: "insertAutoShiftSubsequent",
+                          checked: insertAutoShiftSubsequent,
+                          onChange: e => setInsertAutoShiftSubsequent(e.target.checked),
+                          className: "w-4 h-4 rounded text-emerald-600 focus:ring-emerald-500 cursor-pointer"
+                        }),
+                        s.jsx("label", {
+                          htmlFor: "insertAutoShiftSubsequent",
+                          className: "text-xs font-bold text-slate-800 cursor-pointer",
+                          children: "后续课次自动往后顺延 (后续课次依次顺推 1 个排课周期，保持原大纲顺序)"
+                        })
+                      ]
+                    })
+                  ]
+                }),
+                (() => {
+                  const targetIdx = Math.max(0, Math.min(insertTargetPosition - 1, r.lessons.length));
+                  const affectedCount = insertAutoShiftSubsequent ? Math.max(0, r.lessons.length - targetIdx) : 0;
+                  const slots = r.slots && r.slots.length > 0 ? r.slots : [{ dayOfWeek: 3, startTime: "17:00", endTime: "18:30" }];
+                  let projDate = "";
+                  if (insertDateMode === "slot_shift") {
+                    if (targetIdx < r.lessons.length) {
+                      projDate = r.lessons[targetIdx].date + " (" + r.lessons[targetIdx].dayOfWeekStr + ") " + r.lessons[targetIdx].timeSlot;
+                    } else if (r.lessons.length > 0) {
+                      const nxt = getNextSlotDate(r.lessons[r.lessons.length - 1].date, slots, j);
+                      projDate = nxt.date + " (" + nxt.dayOfWeekStr + ") " + nxt.timeSlot;
+                    } else {
+                      projDate = r.startDate || "";
+                    }
+                  } else {
+                    const dObj = new Date(insertCustomDate + "T00:00:00");
+                    projDate = insertCustomDate + " (" + (al[dObj.getDay()] || "") + ") " + (insertCustomTimeSlot || "");
+                  }
+                  const lastLesDate = r.lessons.length > 0 ? getNextSlotDate(r.lessons[r.lessons.length - 1].date, slots, j).date : r.endDate;
+                  return s.jsxs("div", {
+                    className: "p-3.5 bg-emerald-50/70 border border-emerald-200 rounded-xl text-emerald-950 space-y-1.5",
+                    children: [
+                      s.jsxs("div", {
+                        className: "font-bold text-xs flex items-center justify-between",
+                        children: [
+                          s.jsxs("span", { children: ["📋 变动实时预览 (插入后共 ", r.lessons.length + 1, " 节课)："] }),
+                          s.jsx("span", { className: "text-[10px] bg-emerald-200/80 text-emerald-900 font-extrabold px-2 py-0.5 rounded", children: "自动顺延生效" })
+                        ]
+                      }),
+                      s.jsxs("p", {
+                        children: [
+                          "• 新增课次：",
+                          s.jsxs("strong", { children: ["第 ", insertTargetPosition, " 课 【", insertLessonCode || "课次", ": ", insertLessonTopic || "未填", "】"] }),
+                          s.jsxs("span", { className: "text-emerald-800 ml-1 font-mono text-[11px]", children: ["(", projDate, ")"] })
+                        ]
+                      }),
+                      affectedCount > 0 ? s.jsxs("p", {
+                        children: [
+                          "• 顺延影响：",
+                          s.jsxs("strong", { className: "text-emerald-900", children: ["后续 ", affectedCount, " 节排课将自动依次顺延 1 个排课日"] }),
+                          s.jsxs("span", { className: "text-emerald-700 block mt-0.5", children: ["预计新结课日期将推迟至: ", s.jsx("strong", { className: "font-mono font-bold", children: lastLesDate })] })
+                        ]
+                      }) : s.jsx("p", {
+                        className: "text-emerald-700",
+                        children: "• 本次插入位于最后，无需顺延已有排课，总排课数增加 1 节。"
+                      })
+                    ]
+                  });
+                })()
+              ]
+            }),
+            s.jsxs("div", {
+              className: "flex justify-end space-x-2 pt-2 border-t border-slate-100",
+              children: [
+                s.jsx("button", {
+                  type: "button",
+                  onClick: () => setIsInsertLessonModalOpen(false),
+                  className: "px-4 py-2 bg-slate-100 hover:bg-slate-200 text-slate-700 font-bold text-xs rounded-xl",
+                  children: "取消"
+                }),
+                s.jsxs("button", {
+                  type: "button",
+                  onClick: handleConfirmInsertLesson,
+                  className: "px-5 py-2 bg-emerald-600 hover:bg-emerald-700 text-white font-bold text-xs rounded-xl shadow-sm flex items-center space-x-1.5 transition-all hover:scale-[1.02]",
+                  children: [
+                    s.jsx("svg", {
+                      className: "w-4 h-4 text-white",
+                      fill: "none",
+                      viewBox: "0 0 24 24",
+                      stroke: "currentColor",
+                      strokeWidth: 2.5,
+                      children: s.jsx("path", { strokeLinecap: "round", strokeLinejoin: "round", d: "M12 4.5v15m7.5-7.5h-15" })
+                    }),
+                    s.jsx("span", { children: "确认插入并顺延课次" })
                   ]
                 })
               ]
