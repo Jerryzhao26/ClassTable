@@ -7,7 +7,8 @@
     "dev": "node server.js",
     "build": "node patch_bundle.cjs",
     "start": "node server.js",
-    "lint": "echo 'No lint errors'"
+    "lint": "node --check server.js && node --check patch_bundle.cjs && node --check build_hb.cjs && node --check build_tb.cjs && node --check update_tb.cjs && node --check build_script.cjs && node --check generate_features.cjs",
+    "test": "node --test"
   },
   "dependencies": {
     "express": "^4.21.2"
