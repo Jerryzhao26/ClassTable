@@ -1,0 +1,6136 @@
+{
+  "templates": [
+    {
+      "id": "tmpl_1786668835291",
+      "name": "BE3",
+      "category": "Big English",
+      "targetAge": "7-12",
+      "description": "BE3一周两次",
+      "unitsCount": 10,
+      "lessonsPerUnit": 8,
+      "hasReviewLesson": false,
+      "hasTestLesson": false,
+      "defaultTotalLessons": 48,
+      "codeRule": {
+        "prefix": "U",
+        "lessonPattern": "U{unit}L{lesson}",
+        "reviewPattern": "U{unit} Review",
+        "testPattern": "U{unit} Assessment"
+      },
+      "units": [
+        {
+          "unitNumber": 0,
+          "title": "Unit 0: 单元主题 0",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U0L1",
+              "topic": "开学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U0L2",
+              "topic": "回顾",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 1,
+          "title": "Unit 1: 单元主题 1",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U1L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U1L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U1L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U1L4",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U1L5",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U1L6",
+              "topic": "外教价值观演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U1L7",
+              "topic": "写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U1L8",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2: 单元主题 2",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U2L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U2L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U2L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U2L4",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U2L5",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U2L6",
+              "topic": "外教价值观演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U2L7",
+              "topic": "写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U2L8",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "title": "Unit 3: 单元主题 3",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U3L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U3L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U3L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U3L4",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U3L5",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U3L6",
+              "topic": "外教价值观演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U3L7",
+              "topic": "写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U3L8",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4: 单元主题 4",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U4L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U4L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U4L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U4L4",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U4L5",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U4L6",
+              "topic": "外教价值观演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U4L7",
+              "topic": "写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U4L8",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "title": "Unit 5: 单元主题 5",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U5L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U5L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U5L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U5L4",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U5L5",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U5L6",
+              "topic": "外教价值观演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U5L7",
+              "topic": "写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U5L8",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 6,
+          "title": "Unit 6: 单元主题 6",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U6L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U6L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U6L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U6L4",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U6L5",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U6L6",
+              "topic": "外教价值观演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U6L7",
+              "topic": "写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U6L8",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 7,
+          "title": "Unit 7: 单元主题 7",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U7L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U7L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U7L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U7L4",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U7L5",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U7L6",
+              "topic": "外教价值观演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U7L7",
+              "topic": "写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U7L8",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 8,
+          "title": "Unit 8: 单元主题 8",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U8L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U8L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U8L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U8L4",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U8L5",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U8L6",
+              "topic": "外教价值观演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U8L7",
+              "topic": "写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U8L8",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 9,
+          "title": "Unit 9: 单元主题 9",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U9L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U9L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U9L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U9L4",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U9L5",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U9L6",
+              "topic": "外教价值观演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U9L7",
+              "topic": "写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U9L8",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        }
+      ],
+      "textbook": "Big English 3",
+      "startUnitNum": 0
+    },
+    {
+      "id": "tmpl_1784872847615",
+      "name": "NM一周两次",
+      "category": "Next Move",
+      "targetAge": "6-10 岁",
+      "description": "NM桥梁课",
+      "unitsCount": 5,
+      "lessonsPerUnit": 6,
+      "hasReviewLesson": false,
+      "hasTestLesson": false,
+      "defaultTotalLessons": 48,
+      "codeRule": {
+        "prefix": "U",
+        "lessonPattern": "U{unit}L{lesson}",
+        "reviewPattern": "U{unit} Review",
+        "testPattern": "U{unit} Assessment"
+      },
+      "units": [
+        {
+          "unitNumber": 1,
+          "title": "Unit 1: 单元主题 1",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U1L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U1L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U1L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U1L4",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U1L5",
+              "topic": "文本",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U1L6",
+              "topic": "简单书写",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2: 单元主题 2",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U2L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U2L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U2L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U2L4",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U2L5",
+              "topic": "文本",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U2L6",
+              "topic": "简单书写",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "title": "Unit 3: 单元主题 3",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U3L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U3L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U3L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U3L4",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U3L5",
+              "topic": "文本",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U3L6",
+              "topic": "简单书写",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4: 单元主题 4",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U4L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U4L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U4L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U4L4",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U4L5",
+              "topic": "文本",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U4L6",
+              "topic": "简单书写",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "title": "Unit 5: 单元主题 5",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U5L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U5L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U5L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U5L4",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U5L5",
+              "topic": "文本",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U5L6",
+              "topic": "简单书写",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        }
+      ],
+      "textbook": "Next Move"
+    },
+    {
+      "id": "tmpl_1784864950619",
+      "name": "BE4一周一次",
+      "category": "Big English",
+      "targetAge": "7-12",
+      "description": "BE4一周一次",
+      "unitsCount": 11,
+      "lessonsPerUnit": 4,
+      "hasReviewLesson": false,
+      "hasTestLesson": false,
+      "defaultTotalLessons": 48,
+      "codeRule": {
+        "prefix": "U",
+        "lessonPattern": "U{unit}L{lesson}",
+        "reviewPattern": "U{unit} Review",
+        "testPattern": "U{unit} Assessment"
+      },
+      "units": [
+        {
+          "unitNumber": 0,
+          "title": "Unit 0: 单元主题 0",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U0L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U0L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U0L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U0L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 1,
+          "title": "Unit 1: 单元主题 1",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U1L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U1L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U1L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U1L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2: 单元主题 2",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U2L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U2L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U2L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U2L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "title": "Unit 3: 单元主题 3",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U3L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U3L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U3L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U3L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4: 单元主题 4",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U4L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U4L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U4L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U4L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "title": "Unit 5: 单元主题 5",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U5L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U5L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U5L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U5L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 6,
+          "title": "Unit 6: 单元主题 6",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U6L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U6L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U6L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U6L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 7,
+          "title": "Unit 7: 单元主题 7",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U7L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U7L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U7L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U7L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 8,
+          "title": "Unit 8: 单元主题 8",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U8L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U8L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U8L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U8L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 9,
+          "title": "Unit 9: 单元主题 9",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U9L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U9L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U9L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U9L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 10,
+          "title": "Unit 10: 单元主题 10",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U10L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U10L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U10L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U10L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        }
+      ],
+      "textbook": "Big English 4",
+      "startUnitNum": 0
+    },
+    {
+      "id": "tmpl_1784863995326",
+      "name": "BE2",
+      "category": "Big English",
+      "targetAge": "7-12",
+      "description": "BE2一周两次",
+      "unitsCount": 11,
+      "lessonsPerUnit": 8,
+      "hasReviewLesson": false,
+      "hasTestLesson": false,
+      "defaultTotalLessons": 48,
+      "codeRule": {
+        "prefix": "U",
+        "lessonPattern": "U{unit}L{lesson}",
+        "reviewPattern": "U{unit} Review",
+        "testPattern": "U{unit} Assessment"
+      },
+      "units": [
+        {
+          "unitNumber": 0,
+          "title": "Unit 0: 单元主题 0",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U0L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U0L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 1,
+          "title": "Unit 1: 单元主题 1",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U1L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U1L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U1L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U1L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U1L5",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U1L6",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U1L7",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U1L8",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2: 单元主题 2",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U2L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U2L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U2L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U2L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U2L5",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U2L6",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U2L7",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U2L8",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "title": "Unit 3: 单元主题 3",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U3L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U3L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U3L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U3L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U3L5",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U3L6",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U3L7",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U3L8",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4: 单元主题 4",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U4L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U4L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U4L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U4L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U4L5",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U4L6",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U4L7",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U4L8",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "title": "Unit 5: 单元主题 5",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U5L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U5L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U5L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U5L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U5L5",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U5L6",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U5L7",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U5L8",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 6,
+          "title": "Unit 6: 单元主题 6",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U6L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U6L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U6L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U6L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U6L5",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U6L6",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U6L7",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U6L8",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 7,
+          "title": "Unit 7: 单元主题 7",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U7L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U7L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U7L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U7L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U7L5",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U7L6",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U7L7",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U7L8",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 8,
+          "title": "Unit 8: 单元主题 8",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U8L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U8L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U8L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U8L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U8L5",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U8L6",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U8L7",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U8L8",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 9,
+          "title": "Unit 9: 单元主题 9",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U9L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U9L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U9L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U9L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U9L5",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U9L6",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U9L7",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U9L8",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 10,
+          "title": "Unit 10: 单元主题 10",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U10L1",
+              "topic": "复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U10L2",
+              "topic": "展示",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        }
+      ],
+      "textbook": "Big English 2",
+      "startUnitNum": 0
+    },
+    {
+      "id": "tmpl_1784863775953",
+      "name": "BE1",
+      "category": "Big English",
+      "targetAge": "7-12",
+      "description": "BE1一周两次",
+      "unitsCount": 11,
+      "lessonsPerUnit": 8,
+      "hasReviewLesson": false,
+      "hasTestLesson": false,
+      "defaultTotalLessons": 48,
+      "codeRule": {
+        "prefix": "U",
+        "lessonPattern": "U{unit}L{lesson}",
+        "reviewPattern": "U{unit} Review",
+        "testPattern": "U{unit} Assessment"
+      },
+      "units": [
+        {
+          "unitNumber": 0,
+          "title": "Unit 0",
+          "theme": "Welcome",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U0L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U0L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 1,
+          "title": "Unit 1: 单元主题 1",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U1L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U1L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U1L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U1L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U1L5",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U1L6",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U1L7",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2: 单元主题 2",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U2L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U2L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U2L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U2L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U2L5",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U2L6",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U2L7",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "title": "Unit 3: 单元主题 3",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U3L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U3L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U3L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U3L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U3L5",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U3L6",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U3L7",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4: 单元主题 4",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U4L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U4L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U4L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U4L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U4L5",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U4L6",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U4L7",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "title": "Unit 5: 单元主题 5",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U5L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U5L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U5L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U5L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U5L5",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U5L6",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U5L7",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 6,
+          "title": "Unit 6: 单元主题 6",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U6L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U6L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U6L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U6L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U6L5",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U6L6",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U6L7",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 7,
+          "title": "Unit 7: 单元主题 7",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U7L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U7L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U7L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U7L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U7L5",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U7L6",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U7L7",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 8,
+          "title": "Unit 8: 单元主题 8",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U8L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U8L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U8L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U8L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U8L5",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U8L6",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U8L7",
+              "topic": "阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 9,
+          "title": "Unit 9: 单元主题 9",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U9L1",
+              "topic": "单词句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U9L2",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U9L3",
+              "topic": "语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U9L4",
+              "topic": "跨学科",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U9L5",
+              "topic": "外教自然拼读价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U9L6",
+              "topic": "复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 10,
+          "title": "Unit 10: 单元主题 10",
+          "theme": "单元核心词汇与句型",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U10L1",
+              "topic": "复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U10L2",
+              "topic": "展示",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        }
+      ],
+      "textbook": "Big English 1",
+      "startUnitNum": 0
+    },
+    {
+      "id": "tmpl_1784863630597",
+      "name": "NM一周一次",
+      "category": "NextMove桥梁课",
+      "targetAge": "5-6 岁",
+      "description": "桥梁课一周一次",
+      "unitsCount": 5,
+      "lessonsPerUnit": 4,
+      "hasReviewLesson": false,
+      "hasTestLesson": false,
+      "defaultTotalLessons": 48,
+      "codeRule": {
+        "prefix": "U",
+        "lessonPattern": "U{unit}L{lesson}",
+        "reviewPattern": "U{unit} Review",
+        "testPattern": "U{unit} Assessment"
+      },
+      "units": [
+        {
+          "unitNumber": 1,
+          "title": "Unit 1",
+          "theme": "",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U1L1",
+              "topic": "词汇句型字母",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U1L2",
+              "topic": "词汇句型书写",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U1L3",
+              "topic": "外教字母拼读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U1L4",
+              "topic": "阅读测试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2",
+          "theme": "",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U2L1",
+              "topic": "词汇句型字母",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U2L2",
+              "topic": "词汇句型书写",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U2L3",
+              "topic": "外教字母拼读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U2L4",
+              "topic": "阅读测试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "title": "Unit 3",
+          "theme": "",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U3L1",
+              "topic": "词汇句型字母",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U3L2",
+              "topic": "词汇句型书写",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U3L3",
+              "topic": "外教字母拼读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U3L4",
+              "topic": "阅读测试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4",
+          "theme": "",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U4L1",
+              "topic": "词汇句型字母",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U4L2",
+              "topic": "词汇句型书写",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U4L3",
+              "topic": "外教字母拼读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U4L4",
+              "topic": "阅读测试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "title": "Unit 5",
+          "theme": "",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U5L1",
+              "topic": "词汇句型字母",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U5L2",
+              "topic": "词汇句型书写",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U5L3",
+              "topic": "外教字母拼读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U5L4",
+              "topic": "阅读测试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        }
+      ],
+      "textbook": "Next Move"
+    },
+    {
+      "id": "tmpl_1784863221168",
+      "name": "BE3一周一次",
+      "category": "Big English",
+      "targetAge": "7-12岁",
+      "description": "BE3一周一次",
+      "unitsCount": 11,
+      "lessonsPerUnit": 4,
+      "hasReviewLesson": false,
+      "hasTestLesson": false,
+      "defaultTotalLessons": 48,
+      "codeRule": {
+        "prefix": "U",
+        "lessonPattern": "U{unit}L{lesson}",
+        "reviewPattern": "U{unit} Review",
+        "testPattern": "U{unit} Assessment"
+      },
+      "units": [
+        {
+          "unitNumber": 0,
+          "title": "Unit 0",
+          "theme": "Welcome",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U0L1",
+              "topic": "Welcome",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 1,
+          "title": "Unit 1",
+          "theme": "Wake Up",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U1L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U1L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U1L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U1L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2",
+          "theme": "A Lot of Jobs",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U2L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U2L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U2L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U2L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "title": "Unit 3",
+          "theme": "Working Hard",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U3L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U3L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U3L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U3L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4",
+          "theme": "Amazing Animals",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U4L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U4L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U4L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U4L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "title": "Unit 5",
+          "theme": "Wonderful Weather!",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U5L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U5L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U5L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U5L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 6,
+          "title": "Unit 6",
+          "theme": "Smells Good!",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U6L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U6L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U6L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U6L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 7,
+          "title": "Unit 7",
+          "theme": "Fabulous Food",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U7L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U7L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U7L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U7L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 8,
+          "title": "Unit 8",
+          "theme": "Healthy Living",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U8L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U8L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U8L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U8L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 9,
+          "title": "Unit 9",
+          "theme": "School Trips",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U9L1",
+              "topic": "词汇句型语法故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U9L2",
+              "topic": "语法语用写作",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U9L3",
+              "topic": "跨学科阅读",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U9L4",
+              "topic": "外教听力价值观复习考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 11,
+          "title": "Review",
+          "theme": "总复习",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "RL1",
+              "topic": "复习期末考试",
+              "objective": "掌握 Unit 11 第 1 课核心词汇与句型",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "RL2",
+              "topic": "试卷讲解复习展示",
+              "objective": "掌握 Unit 11 第 2 课核心词汇与句型",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        }
+      ],
+      "textbook": "Big English 3",
+      "startUnitNum": 0
+    },
+    {
+      "id": "tmpl_1784862964718",
+      "name": "BE2一周一次",
+      "category": "Big English",
+      "targetAge": "7-12 岁",
+      "description": "BE2一周一次",
+      "unitsCount": 11,
+      "lessonsPerUnit": 4,
+      "hasReviewLesson": false,
+      "hasTestLesson": false,
+      "defaultTotalLessons": 48,
+      "codeRule": {
+        "prefix": "U",
+        "lessonPattern": "U{unit}L{lesson}",
+        "reviewPattern": "U{unit} Review",
+        "testPattern": "U{unit} Assessment"
+      },
+      "units": [
+        {
+          "unitNumber": 0,
+          "title": "Unit 0",
+          "theme": "Welcome",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U0L1",
+              "topic": "Welcome",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 1,
+          "title": "Unit 1",
+          "theme": "In My Classroom",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U1L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U1L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U1L3",
+              "topic": "跨学科阅读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U1L4",
+              "topic": "外教听力价值观考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2",
+          "theme": "My Games",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U2L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U2L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U2L3",
+              "topic": "跨学科阅读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U2L4",
+              "topic": "外教听力价值观考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "title": "Unit 3",
+          "theme": "In My House",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U3L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U3L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U3L3",
+              "topic": "跨学科阅读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U3L4",
+              "topic": "外教听力价值观考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4",
+          "theme": "In My Town",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U4L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U4L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U4L3",
+              "topic": "跨学科阅读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U4L4",
+              "topic": "外教听力价值观考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "title": "Unit 5",
+          "theme": "My Dream Job",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U5L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U5L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U5L3",
+              "topic": "跨学科阅读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U5L4",
+              "topic": "外教听力价值观考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 6,
+          "title": "Unit 6",
+          "theme": "My Day",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U6L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U6L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U6L3",
+              "topic": "跨学科阅读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U6L4",
+              "topic": "外教听力价值观考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 7,
+          "title": "Unit 7",
+          "theme": "My Favorite Food",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U7L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U7L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U7L3",
+              "topic": "跨学科阅读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U7L4",
+              "topic": "外教听力价值观考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 8,
+          "title": "Unit 8",
+          "theme": "Wild Animals",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U8L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U8L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U8L3",
+              "topic": "跨学科阅读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U8L4",
+              "topic": "外教听力价值观考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 9,
+          "title": "Uni 9",
+          "theme": "Fun All Year",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U9L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U9L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U9L3",
+              "topic": "跨学科阅读复习",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U9L4",
+              "topic": "外教听力价值观考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 11,
+          "title": "Review",
+          "theme": "总复习",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "RL1",
+              "topic": "复习期末考试",
+              "objective": "掌握 Unit 11 第 1 课核心词汇与句型",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "R1L2",
+              "topic": "试卷讲解复习展示",
+              "objective": "掌握 Unit 11 第 2 课核心词汇与句型",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        }
+      ],
+      "textbook": "Big English 2",
+      "startUnitNum": 0
+    },
+    {
+      "id": "tmpl_1784862721818",
+      "name": "BE1一周一次",
+      "category": "Big English",
+      "targetAge": "7-12 岁",
+      "description": "BE1一周一次",
+      "unitsCount": 11,
+      "lessonsPerUnit": 3,
+      "hasReviewLesson": false,
+      "hasTestLesson": false,
+      "defaultTotalLessons": 48,
+      "codeRule": {
+        "prefix": "U",
+        "lessonPattern": "U{unit}L{lesson}",
+        "reviewPattern": "U{unit} Review",
+        "testPattern": "U{unit} Assessment"
+      },
+      "units": [
+        {
+          "unitNumber": 0,
+          "title": "Unit 0",
+          "theme": "Welcome",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U0L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 1,
+          "title": "Unit 1",
+          "theme": "Good Morning，Class",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U1L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U1L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U1L3",
+              "topic": "文化跨学科听力外教考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2",
+          "theme": "My Family",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U2L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U2L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U2L3",
+              "topic": "文化跨学科听力外教考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "title": "Unit 3",
+          "theme": "My Body",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U3L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U3L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U3L3",
+              "topic": "文化跨学科听力外教考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4",
+          "theme": "My Favorite Clothes",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U4L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U4L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U4L3",
+              "topic": "文化跨学科听力外教考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "title": "Unit 5",
+          "theme": "Busy at Home",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U5L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U5L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U5L3",
+              "topic": "文化跨学科听力外教考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 6,
+          "title": "Unit 6",
+          "theme": "On the Farm",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U6L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U6L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U6L3",
+              "topic": "文化跨学科听力外教考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 7,
+          "title": "Unit 7",
+          "theme": "Party Time",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U7L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U7L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U7L3",
+              "topic": "文化跨学科听力外教考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 8,
+          "title": "Unit 8",
+          "theme": "Fun and Games",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U8L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U8L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U8L3",
+              "topic": "文化跨学科听力外教考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 9,
+          "title": "Unit 9",
+          "theme": "Play Time",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U9L1",
+              "topic": "单词句型语法",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U9L2",
+              "topic": "故事语法语用",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U9L3",
+              "topic": "文化跨学科听力外教考试",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 11,
+          "title": "Review",
+          "theme": "总复习",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "RL1",
+              "topic": "复习期末考试",
+              "objective": "掌握 Unit 11 第 1 课核心词汇与句型",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "RL2",
+              "topic": "试卷讲解复习展示",
+              "objective": "掌握 Unit 11 第 2 课核心词汇与句型",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        }
+      ],
+      "textbook": "Big English 1",
+      "startUnitNum": 0
+    },
+    {
+      "id": "tmpl_1784862372063",
+      "name": "Big Fun 3",
+      "category": "Big Fun 启蒙系列",
+      "targetAge": "5-6 岁",
+      "description": "BF3",
+      "unitsCount": 9,
+      "lessonsPerUnit": 8,
+      "hasReviewLesson": false,
+      "hasTestLesson": false,
+      "defaultTotalLessons": 48,
+      "codeRule": {
+        "prefix": "U",
+        "lessonPattern": "U{unit}L{lesson}",
+        "reviewPattern": "U{unit} Review",
+        "testPattern": "U{unit} Assessment"
+      },
+      "units": [
+        {
+          "unitNumber": 1,
+          "title": "Unit 1",
+          "theme": "At School",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U1L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U1L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U1L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U1L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U1L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U1L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U1L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U1L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2",
+          "theme": "Feelings",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U2L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U2L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U2L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U2L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U2L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U2L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U2L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U2L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "title": "Unit 3",
+          "theme": "Home",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U3L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U3L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U3L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U3L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U3L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U3L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U3L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U3L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4",
+          "theme": "Recycle",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U4L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U4L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U4L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U4L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U4L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U4L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U4L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U4L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "title": "Unit 5",
+          "theme": "Eating Out",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U5L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U5L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U5L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U5L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U5L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U5L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U5L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U5L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 6,
+          "title": "Unit 6",
+          "theme": "Our Things",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U6L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U6L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U6L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U6L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U6L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U6L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U6L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U6L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 7,
+          "title": "Unit 7",
+          "theme": "Animals",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U7L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U7L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U7L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U7L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U7L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U7L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U7L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U7L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 8,
+          "title": "Unit 8",
+          "theme": "Places",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U8L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U8L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U8L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U8L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U8L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U8L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U8L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U8L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 9,
+          "title": "Unit 9",
+          "theme": "Show Time!",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U9L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U9L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U9L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U9L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U9L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U9L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U9L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U9L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        }
+      ],
+      "textbook": "Big Fun 3"
+    },
+    {
+      "id": "tmpl_1784862216777",
+      "name": "Big Fun 2",
+      "category": "Big Fun 启蒙系列",
+      "targetAge": "5-6 岁",
+      "description": "BF 2",
+      "unitsCount": 9,
+      "lessonsPerUnit": 8,
+      "hasReviewLesson": false,
+      "hasTestLesson": false,
+      "defaultTotalLessons": 48,
+      "codeRule": {
+        "prefix": "U",
+        "lessonPattern": "U{unit}L{lesson}",
+        "reviewPattern": "U{unit} Review",
+        "testPattern": "U{unit} Assessment"
+      },
+      "units": [
+        {
+          "unitNumber": 1,
+          "title": "Unit 1",
+          "theme": "My School",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U1L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U1L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U1L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U1L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U1L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U1L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U1L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U1L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2",
+          "theme": "My Senses",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U2L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U2L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U2L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U2L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U2L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U2L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U2L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U2L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "title": "Unit 3",
+          "theme": "My Family",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U3L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U3L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U3L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U3L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U3L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U3L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U3L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U3L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4",
+          "theme": "My Toys",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U4L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U4L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U4L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U4L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U4L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U4L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U4L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U4L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "title": "Unit 5",
+          "theme": "Food",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U5L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U5L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U5L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U5L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U5L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U5L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U5L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U5L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 6,
+          "title": "Unit 6",
+          "theme": "My Clothes",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U6L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U6L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U6L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U6L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U6L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U6L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U6L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U6L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 7,
+          "title": "Unit 7",
+          "theme": "Animals",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U7L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U7L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U7L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U7L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U7L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U7L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U7L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U7L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 8,
+          "title": "Unit 8",
+          "theme": "My World",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U8L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U8L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U8L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U8L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U8L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U8L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U8L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U8L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 9,
+          "title": "Unit 9",
+          "theme": "Show Time!",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U9L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U9L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U9L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U9L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U9L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U9L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U9L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U9L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        }
+      ],
+      "textbook": "Big Fun 2"
+    },
+    {
+      "id": "tmpl_1784808528730",
+      "name": "Big Fun 1",
+      "category": "Big Fun 启蒙系列",
+      "targetAge": "5-6 岁",
+      "description": "全新设计的课程模板，包含完整的课次编号规则与教学点占位符。",
+      "unitsCount": 9,
+      "lessonsPerUnit": 8,
+      "hasReviewLesson": false,
+      "hasTestLesson": false,
+      "defaultTotalLessons": 48,
+      "codeRule": {
+        "prefix": "U",
+        "lessonPattern": "U{unit}L{lesson}",
+        "reviewPattern": "U{unit} Review",
+        "testPattern": "U{unit} Assessment"
+      },
+      "units": [
+        {
+          "unitNumber": 1,
+          "title": "Unit 1",
+          "theme": "My Class",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U1L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U1L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U1L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U1L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U1L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U1L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U1L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U1L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 2,
+          "title": "Unit 2",
+          "theme": "My Body",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U2L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U2L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U2L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U2L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U2L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U2L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U2L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U2L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 3,
+          "title": "Unit 3·",
+          "theme": "My Family",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U3L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U3L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U3L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U3L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U3L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U3L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U3L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U3L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 4,
+          "title": "Unit 4",
+          "theme": "My Toys",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U4L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U4L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U4L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U4L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U4L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U4L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U4L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U4L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 5,
+          "title": "Unit 5",
+          "theme": "My Lunch",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U5L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U5L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U5L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U5L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U5L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U5L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U5L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U5L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 6,
+          "title": "Unit 6",
+          "theme": "My Clothes",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U6L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U6L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U6L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U6L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U6L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U6L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U6L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U6L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 7,
+          "title": "Unit 7",
+          "theme": "Animals",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U7L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U7L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U7L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U7L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U7L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U7L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U7L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U7L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 8,
+          "title": "Unit 8",
+          "theme": "My World",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U8L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U8L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U8L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U8L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U8L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U8L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U8L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U8L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        },
+        {
+          "unitNumber": 9,
+          "title": "Unit 9",
+          "theme": "Show Time!",
+          "lessons": [
+            {
+              "lessonInUnit": 1,
+              "code": "U9L1",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 2,
+              "code": "U9L2",
+              "topic": "词汇句型",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 3,
+              "code": "U9L3",
+              "topic": "辨析演练",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 4,
+              "code": "U9L4",
+              "topic": "数学和艺术",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 5,
+              "code": "U9L5",
+              "topic": "故事",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 6,
+              "code": "U9L6",
+              "topic": "外教价值观",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 7,
+              "code": "U9L7",
+              "topic": "科学",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            },
+            {
+              "lessonInUnit": 8,
+              "code": "U9L8",
+              "topic": "外教手工/活动",
+              "objective": "",
+              "isReview": false,
+              "isTest": false
+            }
+          ]
+        }
+      ],
+      "textbook": "Big Fun 1"
+    }
+  ],
+  "customTextbooks": [
+    "Big Fun 1",
+    "Big Fun 2",
+    "Big Fun 3",
+    "Big English 1",
+    "Big English 2",
+    "Big English 3",
+    "Big English 4",
+    "Next Move"
+  ]
+}

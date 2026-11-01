@@ -1,10 +1,23 @@
 // Apply textbook ownership to the generated browser bundle. Keep the legacy
 // level fields in stored records for compatibility with existing schedules.
+const fs = require('node:fs');
+const defaults = JSON.parse(fs.readFileSync('default-curriculum.json', 'utf8'));
 module.exports = function patchCurriculum(bundle) {
   function replace(oldText, newText) {
     if (!bundle.includes(oldText)) throw new Error('Curriculum patch target missing: ' + oldText.slice(0, 80));
     bundle = bundle.replace(oldText, newText);
   }
+  // These are curriculum defaults only. Never embed backup schedules or staff data.
+  replace('Vo=[Ih,Ph,em,tm,lm,am]', 'Vo=' + JSON.stringify(defaults.templates));
+  const oldBooks = bundle.match(/yi=\[[^\]]*\]/);
+  if (!oldBooks) throw new Error('Default textbook list not found');
+  replace(oldBooks[0], 'yi=' + JSON.stringify(defaults.customTextbooks));
+  replace('return im()}),[Me,pe]=_.useState', 'return []}),[Me,pe]=_.useState');
+  // New classes use the selected textbook, not legacy level codes, in their name.
+  replace('[Y,ae]=_.useState("2026秋-Big Fun 1-01班"),[J,de]=_.useState("Big Fun 1")', '[Y,ae]=_.useState(`${new Date().getFullYear()}-${((u.find(t=>t.id===Q)||u[0])?.textbook)||"教材"}-01班`),[J,de]=_.useState(((u.find(t=>t.id===Q)||u[0])?.textbook)||"教材")');
+  replace('if(matchedTpl){Z(matchedTpl.id);X(!0)}else{X(!1)}', 'if(matchedTpl){Z(matchedTpl.id);X(!0)}else{Z(u[0]?.id||"");X(!0)}');
+  replace('lt=`2026秋-${(re==null?void 0:re.name.split(" ")[0])||"K1"}-${Te}(周${w})01班`', 'lt=`${new Date().getFullYear()}-${J.trim()||"教材"}-${Te}(周${w})01班`');
+  replace('onChange:w=>Z(w.target.value),className:"w-full px-3 py-2 text-sm border border-slate-200 rounded-md bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20",children:u.map', 'onChange:w=>{Z(w.target.value);const selected=u.find(t=>t.id===w.target.value);selected&&selected.textbook&&de(selected.textbook)},className:"w-full px-3 py-2 text-sm border border-slate-200 rounded-md bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20",children:u.map');
   // Each generated lesson owns its textbook, including when a class advances midmonth.
   replace('ue=_.useMemo(()=>Vt.map(w=>({...w,lessonCode:', 'ue=_.useMemo(()=>Vt.map(w=>({...w,textbook:J.trim()||(Se==null?void 0:Se.textbook)||"未设教材",lessonCode:');
   replace('[Vt,M,Fe]),oe=', '[Vt,M,Fe,J,Se]),oe=');
