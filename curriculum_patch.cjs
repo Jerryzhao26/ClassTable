@@ -13,6 +13,7 @@ module.exports = function patchCurriculum(bundle) {
   if (!oldBooks) throw new Error('Default textbook list not found');
   replace(oldBooks[0], 'yi=' + JSON.stringify(defaults.customTextbooks));
   replace('return im()}),[Me,pe]=_.useState', 'return []}),[Me,pe]=_.useState');
+  replace('Db=({schedules:r,onSelectSchedule:T})=>{const[j,u]=_.useState(2026),[N,D]=_.useState(8)', 'Db=({schedules:r,onSelectSchedule:T})=>{const[j,u]=_.useState(()=>new Date().getFullYear()),[N,D]=_.useState(()=>new Date().getMonth())');
   // New classes use the selected textbook, not legacy level codes, in their name.
   replace('[Y,ae]=_.useState("2026秋-Big Fun 1-01班"),[J,de]=_.useState("Big Fun 1")', '[Y,ae]=_.useState(`${new Date().getFullYear()}-${((u.find(t=>t.id===Q)||u[0])?.textbook)||"教材"}-01班`),[J,de]=_.useState(((u.find(t=>t.id===Q)||u[0])?.textbook)||"教材")');
   replace('if(matchedTpl){Z(matchedTpl.id);X(!0)}else{X(!1)}', 'if(matchedTpl){Z(matchedTpl.id);X(!0)}else{Z(u[0]?.id||"");X(!0)}');

@@ -1,13 +1,9 @@
 Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpdateLessonStatus:D,onExportBackup:propExportBackup,onRestoreBackup:propRestoreBackup})=>{
   const [hideEmptyMonth, setHideEmptyMonth] = _.useState(true);
   const Q = _.useMemo(() => {
-    if (r.length > 0 && r[0].startDate) {
-      const K = r[0].startDate.split("-");
-      if (K.length >= 2) return { year: parseInt(K[0]), month: parseInt(K[1]) - 1 };
-    }
     const y = new Date;
     return { year: y.getFullYear(), month: y.getMonth() };
-  }, [r]);
+  }, []);
 
   const [H, R] = _.useState(Q.year);
   const [b, X] = _.useState(Q.month);
