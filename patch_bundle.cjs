@@ -92,6 +92,7 @@ afterEb = afterEb.replace(oldQuickMonthTarget, newQuickMonth);
 
 // Construct new bundle with updated components: _b, Tb, Cb, Eb
 let newBundle = beforeHb + hb_new + ',' + tb_new + ',' + cb_new + ',' + eb_new + afterEb;
+newBundle = require('./curriculum_patch.cjs')(newBundle);
 
 console.log('Validating final bundle syntax with vm.Script...');
 try {

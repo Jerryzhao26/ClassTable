@@ -22,8 +22,8 @@ Cb=({schedules:r,levels:T,teachers:j,onSelectSchedule:u,onOpenQuickWizard:N,onDe
     const Me = O.className.toLowerCase().includes(H.toLowerCase()) ||
                O.teacher.toLowerCase().includes(H.toLowerCase()) ||
                (O.textbook || "").toLowerCase().includes(H.toLowerCase()) ||
-               O.levelName.toLowerCase().includes(H.toLowerCase());
-    const pe = b === "all" || O.levelId === b;
+               (O.lessons || []).some(lesson => (lesson.textbook || "").toLowerCase().includes(H.toLowerCase()));
+    const pe = b === "all" || (O.lessons || []).some(lesson => (lesson.textbook || O.textbook) === b);
     const ye = S === "all" || O.frequency === S;
     const P = V === "all" || O.teacher === V;
     return Me && pe && ye && P;
@@ -152,7 +152,7 @@ Cb=({schedules:r,levels:T,teachers:j,onSelectSchedule:u,onOpenQuickWizard:N,onDe
                   type: "text",
                   value: H,
                   onChange: O => R(O.target.value),
-                  placeholder: "搜索班级名称 / 老师 / 级别...",
+                  placeholder: "搜索班级名称 / 老师 / 教材...",
                   className: "w-full pl-9 pr-3 py-2 text-xs border border-slate-200 rounded-md bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20"
                 })
               ]
@@ -164,8 +164,8 @@ Cb=({schedules:r,levels:T,teachers:j,onSelectSchedule:u,onOpenQuickWizard:N,onDe
                 onChange: O => X(O.target.value),
                 className: "w-full px-3 py-2 text-xs border border-slate-200 rounded-md bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20",
                 children: [
-                  s.jsx("option", { value: "all", children: "所有级别 (全部)" }),
-                  T.map(O => s.jsx("option", { value: O.id, children: O.name }, O.id))
+                  s.jsx("option", { value: "all", children: "所有教材 (全部)" }),
+                  [...new Set(r.flatMap(O => (O.lessons || []).map(lesson => lesson.textbook || O.textbook).filter(Boolean)))].map(name => s.jsx("option", { value: name, children: name }, name))
                 ]
               })
             }),
@@ -474,7 +474,6 @@ Cb=({schedules:r,levels:T,teachers:j,onSelectSchedule:u,onOpenQuickWizard:N,onDe
                   }),
                   s.jsx("th", { className: "py-3.5 px-4 text-[11px]", children: "班级名称" }),
                   s.jsx("th", { className: "py-3.5 px-4 text-[11px]", children: "关联教材" }),
-                  s.jsx("th", { className: "py-3.5 px-4 text-[11px]", children: "级别" }),
                   s.jsx("th", { className: "py-3.5 px-4 text-[11px]", children: "频次" }),
                   s.jsx("th", { className: "py-3.5 px-4 text-[11px]", children: "授课老师" }),
                   s.jsx("th", { className: "py-3.5 px-4 text-[11px]", children: "上课时间段" }),
@@ -513,7 +512,6 @@ Cb=({schedules:r,levels:T,teachers:j,onSelectSchedule:u,onOpenQuickWizard:N,onDe
                         ]
                       })
                     }),
-                    s.jsx("td", { className: "py-3.5 px-4 font-semibold text-indigo-600", children: O.levelName }),
                     s.jsx("td", {
                       className: "py-3.5 px-4",
                       children: s.jsx("span", {
@@ -567,7 +565,7 @@ Cb=({schedules:r,levels:T,teachers:j,onSelectSchedule:u,onOpenQuickWizard:N,onDe
               className: "p-3 bg-slate-50 rounded-xl border border-slate-200/80 text-xs space-y-1",
               children: [
                 s.jsxs("div", { className: "flex justify-between", children: [s.jsx("span", { className: "text-slate-500", children: "班级名称：" }), s.jsx("span", { className: "font-bold text-slate-900", children: B.className })] }),
-                s.jsxs("div", { className: "flex justify-between", children: [s.jsx("span", { className: "text-slate-500", children: "课程级别：" }), s.jsx("span", { className: "font-semibold text-indigo-600", children: B.levelName })] }),
+                s.jsxs("div", { className: "flex justify-between", children: [s.jsx("span", { className: "text-slate-500", children: "当前教材：" }), s.jsx("span", { className: "font-semibold text-indigo-600", children: window.ClassTableTextbook.current(B).textbook })] }),
                 s.jsxs("div", { className: "flex justify-between", children: [s.jsx("span", { className: "text-slate-500", children: "授课教师：" }), s.jsx("span", { className: "font-medium text-slate-800", children: B.teacher })] })
               ]
             }),
@@ -627,7 +625,7 @@ Cb=({schedules:r,levels:T,teachers:j,onSelectSchedule:u,onOpenQuickWizard:N,onDe
                     s.jsxs("div", {
                       children: [
                         s.jsx("span", { className: "font-bold text-slate-900", children: O.className }),
-                        s.jsxs("span", { className: "text-slate-400 ml-2 text-[11px]", children: ["(", O.levelName, " · ", O.teacher, ")"] })
+                        s.jsxs("span", { className: "text-slate-400 ml-2 text-[11px]", children: ["(", window.ClassTableTextbook.current(O).textbook, " · ", O.teacher, ")"] })
                       ]
                     }),
                     s.jsxs("span", { className: "font-mono text-slate-600 text-[11px] bg-slate-100 px-2 py-0.5 rounded font-semibold", children: [O.lessons ? O.lessons.length : O.totalLessons, " 节课"] })
