@@ -13,7 +13,8 @@ _b=({activeTab:r,setActiveTab:T,totalClassesCount:j,activeLessonsThisWeekCount:u
     reader.onload = (ev) => {
       try {
         const data = JSON.parse(ev.target.result);
-        if (data && (data.schedules || data.templates || data.levels || data.teachers)) {
+        if (data) {
+          window.ClassTableBackup.validateBackup(data);
           if (typeof propRestoreBackup === "function") {
             propRestoreBackup(data, (applied) => {
               const sCount = (applied.schedules || []).length;
@@ -21,14 +22,7 @@ _b=({activeTab:r,setActiveTab:T,totalClassesCount:j,activeLessonsThisWeekCount:u
               triggerHeaderNotice(`🎉 成功恢复备份数据！已载入 ${sCount} 个班级排课与 ${tCount} 套课程体系模板。`, "success");
             });
           } else {
-            if (data.schedules) localStorage.setItem("beavers_schedules", JSON.stringify(data.schedules));
-            if (data.templates) localStorage.setItem("beavers_templates", JSON.stringify(data.templates));
-            if (data.levels) localStorage.setItem("beavers_levels", JSON.stringify(data.levels));
-            if (data.holidays) localStorage.setItem("beavers_holidays", JSON.stringify(data.holidays));
-            if (data.teachers) localStorage.setItem("beavers_teachers", JSON.stringify(data.teachers));
-            if (data.customTextbooks) localStorage.setItem("beavers_custom_textbooks", JSON.stringify(data.customTextbooks));
-            triggerHeaderNotice("🎉 本地数据已恢复成功！", "success");
-            setTimeout(() => window.location.reload(), 1000);
+            triggerHeaderNotice("恢复功能不可用", "error");
           }
         } else {
           triggerHeaderNotice("所选文件格式不正确：未检测到有效的排课或模板备份数据 (.json)", "error");

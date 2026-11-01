@@ -64,7 +64,8 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
     reader.onload = (ev) => {
       try {
         const parsed = JSON.parse(ev.target.result);
-        if (parsed && (parsed.schedules || parsed.templates || parsed.levels || parsed.teachers)) {
+        if (parsed) {
+          window.ClassTableBackup.validateBackup(parsed);
           setRestoreConfirmData(parsed);
         } else {
           showNotice("所选文件格式不正确：未检测到有效的排课或模板备份数据 (.json)", "error");
@@ -87,14 +88,7 @@ Tb=({schedules:r,templates:T,teachers:j,onSelectSchedule:u,onOpenWizard:N,onUpda
           showNotice(`🎉 成功从本地备份恢复数据！已载入 ${sCount} 个班级排课与 ${tCount} 套课程体系模板。`, "success");
         });
       } else {
-        if (restoreConfirmData.schedules) localStorage.setItem("beavers_schedules", JSON.stringify(restoreConfirmData.schedules));
-        if (restoreConfirmData.templates) localStorage.setItem("beavers_templates", JSON.stringify(restoreConfirmData.templates));
-        if (restoreConfirmData.levels) localStorage.setItem("beavers_levels", JSON.stringify(restoreConfirmData.levels));
-        if (restoreConfirmData.holidays) localStorage.setItem("beavers_holidays", JSON.stringify(restoreConfirmData.holidays));
-        if (restoreConfirmData.teachers) localStorage.setItem("beavers_teachers", JSON.stringify(restoreConfirmData.teachers));
-        if (restoreConfirmData.customTextbooks) localStorage.setItem("beavers_custom_textbooks", JSON.stringify(restoreConfirmData.customTextbooks));
-        showNotice("🎉 本地数据已恢复成功！", "success");
-        setTimeout(() => window.location.reload(), 1000);
+        showNotice("恢复功能不可用", "error");
       }
       setRestoreConfirmData(null);
     } catch (err) {

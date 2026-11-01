@@ -75,10 +75,9 @@ Cb=({schedules:r,levels:T,teachers:j,onSelectSchedule:u,onOpenQuickWizard:N,onDe
     const count = selectedScheduleIds.size;
     if (count === 0) return;
     const ids = Array.from(selectedScheduleIds);
-    if (batchDel) {
-      batchDel(ids);
-    } else {
-      ids.forEach(id => D(id));
+    if (!batchDel || batchDel(ids) !== true) {
+      setBatchNotice("删除未执行，请先解锁编辑权限。");
+      return;
     }
     setSelectedScheduleIds(new Set());
     setIsBatchDeleteModalOpen(false);
