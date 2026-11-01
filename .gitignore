@@ -10,10 +10,7 @@ yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
 
-# Runtime data
-pnpm-lock.yaml
-yarn.lock
-package-lock.json
+# Commit the lockfile for the package manager in use to make installs reproducible.
 
 # Environment variables & secrets
 .env
