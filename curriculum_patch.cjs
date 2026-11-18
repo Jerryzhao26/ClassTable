@@ -17,6 +17,7 @@ module.exports = function patchCurriculum(bundle) {
   // New classes use the selected textbook, not legacy level codes, in their name.
   replace('[Y,ae]=_.useState("2026秋-Big Fun 1-01班"),[J,de]=_.useState("Big Fun 1")', '[Y,ae]=_.useState(`${new Date().getFullYear()}-${((u.find(t=>t.id===Q)||u[0])?.textbook)||"教材"}-01班`),[J,de]=_.useState(((u.find(t=>t.id===Q)||u[0])?.textbook)||"教材")');
   replace('if(matchedTpl){Z(matchedTpl.id);X(!0)}else{X(!1)}', 'if(matchedTpl){Z(matchedTpl.id);X(!0)}else{Z(u[0]?.id||"");X(!0)}');
+  replace('if(targetClass.textbook)de(targetClass.textbook);if(targetClass.levelId)ie(targetClass.levelId);const matchedTpl=u.find(w=>(targetClass.textbook&&w.textbook===targetClass.textbook)', 'const lastBook=targetClass.lessons?.at(-1)?.textbook||targetClass.textbook;if(lastBook)de(lastBook);if(targetClass.levelId)ie(targetClass.levelId);const matchedTpl=u.find(w=>(lastBook&&w.textbook===lastBook)');
   replace('lt=`2026秋-${(re==null?void 0:re.name.split(" ")[0])||"K1"}-${Te}(周${w})01班`', 'lt=`${new Date().getFullYear()}-${J.trim()||"教材"}-${Te}(周${w})01班`');
   replace('onChange:w=>Z(w.target.value),className:"w-full px-3 py-2 text-sm border border-slate-200 rounded-md bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20",children:u.map', 'onChange:w=>{Z(w.target.value);const selected=u.find(t=>t.id===w.target.value);selected&&selected.textbook&&de(selected.textbook)},className:"w-full px-3 py-2 text-sm border border-slate-200 rounded-md bg-slate-50 focus:outline-none focus:ring-2 focus:ring-indigo-500/20",children:u.map');
   // Each generated lesson owns its textbook, including when a class advances midmonth.
@@ -25,6 +26,7 @@ module.exports = function patchCurriculum(bundle) {
   replace('const combinedLessons=[...(targetClass.lessons||[]),...reindexedNewLessons];', 'const combinedLessons=[...(targetClass.lessons||[]).map(lesson=>({...lesson,textbook:lesson.textbook||targetClass.textbook||"未设教材"})),...reindexedNewLessons];');
   // A template with an explicit textbook must agree with the chosen textbook.
   replace('const updatedClass={...targetClass,', 'if(b&&Se&&Se.textbook&&J.trim()!==Se.textbook){alert("教材与课程模板不一致，请选择对应教材");return}const updatedClass={...targetClass,');
+  replace('textbook:J.trim()||targetClass.textbook,', 'textbook:targetClass.textbook,');
   replace('}else{const w={id:`cls_${Date.now()}`', '}else{if(b&&Se&&Se.textbook&&J.trim()!==Se.textbook){alert("教材与课程模板不一致，请选择对应教材");return}const w={id:`cls_${Date.now()}`');
   // The class information editor changes the current textbook without rewriting history.
   replace('textbook: Ne.trim() || "Big Fun 1",', 'textbook: Ne.trim() || "未设教材",\n                      lessons: r.lessons.map(lesson => ({...lesson, textbook: lesson.textbook || r.textbook || "未设教材"})),');
@@ -41,13 +43,20 @@ module.exports = function patchCurriculum(bundle) {
   replace('if (exportTextbookFilter !== "all" && classTextbook !== exportTextbookFilter) return;\n      (sched.lessons || []).forEach(les => {', '(sched.lessons || []).forEach(les => {\n        if (exportTextbookFilter !== "all" && (les.textbook || classTextbook) !== exportTextbookFilter) return;');
   replace('textbook: classTextbook,\n          classFrequency:', 'textbook: les.textbook || classTextbook,\n          classFrequency:');
   // The upgrade action changes textbook ownership from the selected lesson onward.
+  replace('const ze = Fh(r, P, M, y, ce);', 'if (r.lessons.slice(P - 1).some(lesson => lesson.status === "completed")) {\n                      alert("所选范围包含已上课次。请从最后一节已上课之后选择生效课次。");\n                      return;\n                    }\n                    const ze = Fh(r, P, M, y, ce);');
   replace('if(V<Q)return Z;const ie=b[V-Q];return ie?{...Z,unit:', 'if(V<Q)return {...Z,textbook:Z.textbook||r.textbook||"未设教材"};const ie=b[V-Q];return ie?{...Z,textbook:j.textbook||j.name,unit:');
-  replace('return{...r,levelName:S,lessons:X,updatedAt:', 'return{...r,textbook:j.textbook||j.name,lessons:X,updatedAt:');
+  replace('return{...r,levelName:S,lessons:X,updatedAt:', 'return{...r,lessons:X,updatedAt:');
+  replace(',S=r.levelName.includes("➔")?`${r.levelName.split("➔")[0]} ➔ ${j.name}`:`${r.levelName} ➔ ${j.name}`;return{...r,lessons:X', ';return{...r,lessons:X');
+  // Keep explicit textbook ownership when the postponement engine rebuilds lessons.
+  replace('b=R.map(Y=>({unit:Y.unit,', 'b=R.map(Y=>({textbook:Y.textbook,unit:Y.unit,');
+  replace('timeSlot:F,unit:ae.unit,lessonInUnit:ae.lessonInUnit,', 'timeSlot:F,textbook:ae.textbook,unit:ae.unit,lessonInUnit:ae.lessonInUnit,');
   replace('const T=["课次编号","上课日期","星期","时间段","单元","课程代码"', 'const T=["课次编号","上课日期","星期","时间段","教材","单元","课程代码"');
   replace('H.dayOfWeekStr,H.timeSlot,`U${H.unit}`', 'H.dayOfWeekStr,H.timeSlot,H.textbook||r.textbook||"未设教材",`U${H.unit}`');
   replace('级别: ${r.levelName}, 授课老师:', '当前教材: ${window.ClassTableTextbook.current(r).textbook}, 授课老师:');
   // A class label follows today's lesson date, including a future planned switch.
   replace('children: O.textbook || "Big Fun 1"', 'children: (window.ClassTableTextbook.current(O).upcoming ? "即将使用: " : "当前教材: ") + window.ClassTableTextbook.current(O).textbook');
+  replace('children: O.textbook || "Big Fun 1"', 'children: window.ClassTableTextbook.current(O).textbook');
+  replace('title: `教材: ${y.textbook || (T && T.find(t => t.id === y.templateId)?.textbook) || "未设教材"}`', 'title: window.ClassTableTextbook.current(y).textbook');
   replace('children: P.lessonCode', 'children: (P.textbook || O.textbook || "未设教材") + " · " + P.lessonCode');
   replace('children: ["教材: ", y.textbook || (T && T.find(t => t.id === y.templateId)?.textbook) || "未设教材"]', 'children: [window.ClassTableTextbook.current(y).upcoming ? "即将使用: " : "当前教材: ", window.ClassTableTextbook.current(y).textbook]');
   replace('children: ["课次详情: ", J.lesson.lessonCode]', 'children: ["课次详情: ", J.lesson.textbook || J.schedule.textbook || "未设教材", " · ", J.lesson.lessonCode]');
